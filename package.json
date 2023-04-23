@@ -1,0 +1,43 @@
+{
+  "name": "edge-ui",
+  "version": "0.0.0",
+  "description": "EdgeUI Projects Monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skdhg/edge-ui.git"
+  },
+  "keywords": [
+    "edge-ui",
+    "react",
+    "vue",
+    "components",
+    "ui",
+    "library",
+    "tailwindcss"
+  ],
+  "author": "skdhg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skdhg/edge-ui/issues"
+  },
+  "homepage": "https://github.com/skdhg/edge-ui#readme",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write \"{packages,apps}/**/*.{js,ts,jsx,tsx,css}\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/config-angular": "^17.1.0",
+    "commitlint": "^17.1.2",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "turbo": "latest"
+  },
+  "packageManager": "yarn@4.0.0-rc.42"
+}

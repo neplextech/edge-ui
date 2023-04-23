@@ -1,0 +1,25 @@
+{
+    "name": "@edge-ui/tsconfig",
+    "version": "0.0.0",
+    "description": "TSConfig",
+    "author": "skdhg",
+    "homepage": "https://github.com/skdhg/edge-ui",
+    "license": "MIT",
+    "main": "index.js",
+    "private": true,
+    "files": [
+        "index.js",
+        "base.json"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/skdhg/edge-ui.git"
+    },
+    "bugs": {
+        "url": "https://github.com/skdhg/edge-ui/issues"
+    },
+    "devDependencies": {
+        "@types/node": "^18.7.5",
+        "typescript": "^4.7.4"
+    }
+}

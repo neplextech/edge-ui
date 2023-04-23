@@ -1,0 +1,21 @@
+{
+    "extends": "@edge-ui/tsconfig/base.json",
+    "compilerOptions": {
+        "target": "ES6", 
+        "esModuleInterop": true, 
+        "forceConsistentCasingInFileNames": true,
+        "strict": true, 
+        "skipLibCheck": true,
+        "jsx": "react", 
+        "module": "ESNext",  
+        "declaration": true,
+        "declarationDir": "types",
+        "sourceMap": true,
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "emitDeclarationOnly": true,
+    },
+    "include": ["src/**/*", "postcss.config.js"],
+    "exclude": ["node_modules"]
+}
