@@ -2,7 +2,7 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 
-const variants = cva(['your', 'base', 'classes'], {
+const variants = cva(['rounded-md', 'hover:outline', 'hover:outline-1'], {
     variants: {
         variant: {
             primary: ['text-light', 'bg-dark', 'hover:text-dark', 'hover:bg-gray-50', 'hover:outline-dark'],
@@ -33,14 +33,7 @@ export function Button(props: ButtonVariants & React.ButtonHTMLAttributes<HTMLBu
     return (
         <button
             {...attributes}
-            className={twMerge(
-                'cursor-pointer rounded-md hover:outline hover:outline-1',
-                variants({
-                    className,
-                    size,
-                    variant
-                })
-            )}
+            className={twMerge(variants({ className, size, variant}))}
         >
             {children}
         </button>
