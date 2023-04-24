@@ -2,15 +2,16 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 
+
 const variants = cva(['rounded-md', 'hover:outline', 'hover:outline-1'], {
     variants: {
         variant: {
             primary: ['text-light', 'bg-dark', 'hover:text-dark', 'hover:bg-gray-50', 'hover:outline-dark'],
             secondary: ['text-dark', 'bg-light', 'hover:outline-dark'],
-            success: ['text-light', 'bg-success', 'hover:outline-dark'],
-            danger: ['text-light', 'bg-danger', 'hover:outline-dark'],
-            warning: ['text-light', 'bg-warning', 'hover:outline-dark'],
-            info: ['text-light', 'bg-info', 'hover:outline-dark']
+            success: ['text-light', 'bg-success', 'hover:outline-success'],
+            danger: ['text-light', 'bg-danger', 'hover:outline-danger'],
+            warning: ['text-light', 'bg-warning', 'hover:outline-warning'],
+            info: ['text-light', 'bg-info', 'hover:outline-info']
         },
         size: {
             small: ['text-sm', 'p-1'],
