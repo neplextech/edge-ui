@@ -1,42 +1,40 @@
-import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { twMerge } from 'tailwind-merge';
+import * as React from 'react';
+import { VariantProps, cva } from 'class-variance-authority';
+import { cn } from '../utility';
 
-
-const variants = cva(['rounded-md', 'hover:outline', 'hover:outline-1'], {
-    variants: {
-        variant: {
-            primary: ['text-light', 'bg-dark', 'hover:text-dark', 'hover:bg-gray-50', 'hover:outline-dark'],
-            secondary: ['text-dark', 'bg-light', 'hover:outline-dark'],
-            success: ['text-light', 'bg-success', 'hover:outline-success'],
-            danger: ['text-light', 'bg-danger', 'hover:outline-danger'],
-            warning: ['text-light', 'bg-warning', 'hover:outline-warning'],
-            info: ['text-light', 'bg-info', 'hover:outline-info']
+const buttonVariants = cva(
+    'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
+    {
+        variants: {
+            variant: {
+                default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+                destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+                outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
+                secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+                ghost: 'hover:bg-accent hover:text-accent-foreground',
+                link: 'underline-offset-4 hover:underline text-primary'
+            },
+            size: {
+                default: 'h-10 py-2 px-4',
+                sm: 'h-9 px-3 rounded-md',
+                lg: 'h-11 px-8 rounded-md'
+            }
         },
-        size: {
-            small: ['text-sm', 'p-1'],
-            medium: ['text-md', 'p-3'],
-            large: ['text-lg', 'p-4'],
-            extraLarge: ['text-xl', 'p-4']
+        defaultVariants: {
+            variant: 'default',
+            size: 'default'
         }
-    },
-    defaultVariants: {
-        variant: 'primary',
-        size: 'medium'
     }
+);
+
+export interface ButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+        VariantProps<typeof buttonVariants> {}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, ...props }, ref) => {
+    return <button className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
 });
 
-export interface ButtonVariants extends VariantProps<typeof variants> {}
+Button.displayName = 'Button';
 
-export function Button(props: ButtonVariants & React.ButtonHTMLAttributes<HTMLButtonElement>) {
-    const { children, className, size, variant, ...attributes } = props;
-
-    return (
-        <button
-            {...attributes}
-            className={twMerge(variants({ className, size, variant}))}
-        >
-            {children}
-        </button>
-    );
-}
+export { Button, buttonVariants };

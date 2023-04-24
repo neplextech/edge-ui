@@ -3,9 +3,9 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
     dts: true,
     clean: true,
-    entry: ['./src', '!./src/*.css'],
+    entry: ['./src/index.ts', '!./src/*.css'],
     skipNodeModulesBundle: true,
-    bundle: false,
+    bundle: true,
     format: ['cjs', 'esm'],
     keepNames: true,
     minify: false,
