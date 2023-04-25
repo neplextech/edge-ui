@@ -16,7 +16,7 @@ import { EdgeUIProvider } from '@edge-ui/react';
 // root
 export default function Application({ Component, pageProps }: AppProps) {
     return (
-        <EdgeUIProvider fontSans={manrope.style.fontFamily}>
+        <EdgeUIProvider>
             <Component {...pageProps} />
         </EdgeUIProvider>
     );
