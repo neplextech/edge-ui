@@ -15,6 +15,7 @@ export * from './components/navigation';
 export * from './components/progress';
 export * from './components/scrollArea';
 export * from './components/separator';
+export * from './components/slider';
 export * from './components/tab';
 export * from './components/toast';
 export * from './components/tooltip';
