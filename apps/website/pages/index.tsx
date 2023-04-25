@@ -1,4 +1,14 @@
-import { Button, Heading, Alert, AlertTitle, AlertDescription, Paragraph, useTheme, Switch } from '@edge-ui/react';
+import {
+    Button,
+    Heading,
+    Alert,
+    AlertTitle,
+    AlertDescription,
+    Paragraph,
+    useTheme,
+    Switch,
+    Slider
+} from '@edge-ui/react';
 import { useState } from 'react';
 import { Terminal } from 'lucide-react';
 
@@ -18,6 +28,7 @@ export default function Home() {
                 <Button className="w-full" onClick={() => setCount((prev) => prev + 1)}>
                     Count
                 </Button>
+                <Slider className="w-full" defaultValue={[10]} />
                 <Paragraph>Current theme is: {theme}</Paragraph>
                 <div>
                     <Heading size="h4">Toggle theme</Heading>
