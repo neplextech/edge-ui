@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../utility';
+import { cn } from '../../utility';
 import { VariantProps, cva } from 'class-variance-authority';
 
 const headingVariants = cva(['scroll-m-20', 'tracking-tight'], {

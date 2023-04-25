@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import '@edge-ui/react/styles.css';
 import type { AppProps } from 'next/app';
 import { Manrope } from 'next/font/google';
+import { EdgeUIProvider } from '@edge-ui/react';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -11,14 +12,9 @@ const manrope = Manrope({
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <>
-            <style jsx global>{`
-				:root {
-					--font-sans: ${manrope.style.fontFamily};
-				}
-			}`}</style>
+        <EdgeUIProvider fontSans={manrope.style.fontFamily}>
             <Component {...pageProps} />
-        </>
+        </EdgeUIProvider>
     );
 }
 

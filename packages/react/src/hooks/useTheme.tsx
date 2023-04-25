@@ -1,12 +1,16 @@
-import { useContext } from "react";
-import { ThemeContext } from "./EdgeUIProvider";
+import { useContext } from 'react';
+import { ThemeContext } from './EdgeUIProvider';
 
 export function useTheme() {
-    const themeCtx = useContext(ThemeContext);
-    
+    const { setTheme, theme, setFontSans, fontSans } = useContext(ThemeContext);
+
     return {
-        isDark: themeCtx.theme === 'dark',
-        isLight: themeCtx.theme === 'light',
-        isSystem: themeCtx.theme === 'system'
+        isDark: theme === 'dark',
+        isLight: theme === 'light',
+        toggle: () => setTheme((p) => (p === 'light' ? 'dark' : 'light')),
+        theme,
+        font: fontSans,
+        setTheme: setTheme,
+        setFont: setFontSans
     };
 }
