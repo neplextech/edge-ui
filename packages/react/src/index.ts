@@ -19,7 +19,7 @@ export * from './components/scrollArea';
 export * from './components/separator';
 export * from './components/slider';
 export * from './components/tab';
-export * from './components/toast/toast';
+export * from './components/toast';
 export * from './components/tooltip';
 export * from './components/typography';
 export * from './utility';
