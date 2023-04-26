@@ -2,19 +2,25 @@
 
 import * as React from 'react';
 import { cn } from '../../utility';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-interface Props extends React.HTMLProps<HTMLDivElement> {
-    horizontal?: boolean;
-    vertical?: boolean;
-}
+const centerProps = cva(['flex'], {
+    variants: {
+        align: {
+            horizontal: 'items-center',
+            vertical: 'justify-center',
+            both: 'items-center justify-center'
+        }
+    },
+    defaultVariants: {
+        align: 'both'
+    }
+});
 
-const Center = React.forwardRef<HTMLDivElement, Props>(({ vertical, horizontal, className, ...props }, ref) => {
-    let style = 'justify-center items-center';
+interface Props extends React.HTMLProps<HTMLDivElement>, VariantProps<typeof centerProps> {}
 
-    if (!horizontal && vertical) style = 'items-center';
-    if (horizontal && !vertical) style = 'justify-center';
-
-    return <div ref={ref} className={cn('flex h-screen w-screen', style, className)} {...props} />;
+const Center = React.forwardRef<HTMLDivElement, Props>(({ className, align, ...props }, ref) => {
+    return <div ref={ref} className={cn(centerProps({ align }), className)} {...props} />;
 });
 
 Center.displayName = 'Center';
