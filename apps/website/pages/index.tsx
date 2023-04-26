@@ -34,28 +34,25 @@ export function MyComponent() {
 
 export default function Home() {
     return (
-        <>
-            <Navbar />
-            <main className="my-5 px-[12.8rem]">
-                <Heading>Edge UI</Heading>
-                <Paragraph className="text-xl">Minimal ui components for React</Paragraph>
-                <div className="flex flex-row gap-2 my-4">
-                    <Button>Get Started</Button>
-                    <Button variant="outline">Components</Button>
+        <main className="my-5 px-[12.8rem]">
+            <Heading>Edge UI</Heading>
+            <Paragraph className="text-xl">Minimal ui components for React</Paragraph>
+            <div className="flex flex-row gap-2 my-4">
+                <Button>Get Started</Button>
+                <Button variant="outline">Components</Button>
+            </div>
+            <div>
+                <div className="mb-4">
+                    <Heading size="h4">Installation</Heading>
+                    <CodeBlock language="pwsh">{'npm install -D @edge-ui/react'}</CodeBlock>
                 </div>
                 <div>
-                    <div className="mb-4">
-                        <Heading size="h4">Installation</Heading>
-                        <CodeBlock language="pwsh">{'npm install -D @edge-ui/react'}</CodeBlock>
-                    </div>
-                    <div>
-                        <Heading size="h4">Example</Heading>
-                        <CodeBlock lines language="typescript">
-                            {exampleCode}
-                        </CodeBlock>
-                    </div>
+                    <Heading size="h4">Example</Heading>
+                    <CodeBlock lines language="typescript">
+                        {exampleCode}
+                    </CodeBlock>
                 </div>
-            </main>
-        </>
+            </div>
+        </main>
     );
 }

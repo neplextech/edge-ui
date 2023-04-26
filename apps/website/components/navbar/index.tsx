@@ -26,12 +26,12 @@ export default function Navbar() {
             </NavigationMenuList>
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="/documentation" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>Documentation</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="/components" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>Components</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
