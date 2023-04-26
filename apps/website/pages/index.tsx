@@ -25,9 +25,7 @@ export function MyComponent() {
     return (
         <div>
             <Heading>Count: {count}</Heading>
-            <Button
-                onClick={counter}
-            >
+            <Button onClick={counter}>
                 Click Me!
             </Button>
         </div>
@@ -41,13 +39,21 @@ export default function Home() {
             <main className="my-5 px-[12.8rem]">
                 <Heading>Edge UI</Heading>
                 <Paragraph className="text-xl">Minimal ui components for React</Paragraph>
-                <div className="flex flex-row gap-2 mt-4">
+                <div className="flex flex-row gap-2 my-4">
                     <Button>Get Started</Button>
                     <Button variant="outline">Components</Button>
                 </div>
                 <div>
-                    <Heading size="h4">Example</Heading>
-                    <CodeBlock code={exampleCode} language="typescript" />
+                    <div className="mb-4">
+                        <Heading size="h4">Installation</Heading>
+                        <CodeBlock language="pwsh">{'npm install -D @edge-ui/react'}</CodeBlock>
+                    </div>
+                    <div>
+                        <Heading size="h4">Example</Heading>
+                        <CodeBlock lines language="typescript">
+                            {exampleCode}
+                        </CodeBlock>
+                    </div>
                 </div>
             </main>
         </>
