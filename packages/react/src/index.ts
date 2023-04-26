@@ -5,6 +5,7 @@ export * from './components/badge';
 export * from './components/button';
 export * from './components/card';
 export * from './components/center';
+export * from './components/code';
 export * from './components/contextMenu';
 export * from './components/dialog';
 export * from './components/form';

@@ -28,13 +28,15 @@ import { Heading, Button } from '@edge-ui/react';
 export function MyComponent() {
     const [count, setCount] = useState(0);
 
+    const counter = () => {
+        setCount(p => p + 1);
+    };
+
     return (
         <div>
             <Heading>Count: {count}</Heading>
             <Button
-                onClick={() => {
-                    setCount((p) => p + 1);
-                }}
+                onClick={counter}
             >
                 Click Me!
             </Button>

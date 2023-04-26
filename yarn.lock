@@ -282,6 +282,7 @@ __metadata:
     clsx: ^1.2.1
     date-fns: ^2.29.3
     lucide-react: ^0.176.0
+    prism-react-renderer: ^2.0.3
     react: ^18.2.0
     react-day-picker: ^8.7.1
     react-dom: ^18.2.0
@@ -1580,6 +1581,13 @@ __metadata:
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
   checksum: e87bccbf11f95035c89a132b52b79ce69a1e3652fe55962363063c9c0dae0fe2477ebc585e03a9652adc6f381d24ba5589cc5e51849df4ced3d3e004a7d40ed5
+  languageName: node
+  linkType: hard
+
+"@types/prismjs@npm:^1.26.0":
+  version: 1.26.0
+  resolution: "@types/prismjs@npm:1.26.0"
+  checksum: cd5e7a6214c1f4213ec512a5fcf6d8fe37a56b813fc57ac95b5ff5ee074742bfdbd2f2730d9fd985205bf4586728e09baa97023f739e5aa1c9735a7c1ecbd11a
   languageName: node
   linkType: hard
 
@@ -5159,6 +5167,18 @@ __metadata:
   bin:
     prettier: bin-prettier.js
   checksum: b49e409431bf129dd89238d64299ba80717b57ff5a6d1c1a8b1a28b590d998a34e083fa13573bc732bb8d2305becb4c9a4407f8486c81fa7d55100eb08263cf8
+  languageName: node
+  linkType: hard
+
+"prism-react-renderer@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "prism-react-renderer@npm:2.0.3"
+  dependencies:
+    "@types/prismjs": ^1.26.0
+    clsx: ^1.2.1
+  peerDependencies:
+    react: ">=16.0.0"
+  checksum: 9a981671f1f9d8ebab8d378b34f640433e27af4b495d7063121e00adc2ba54471262fdf1cff1e3f4992b805187f6c129607538b63aa6111fbfb823a62f727d05
   languageName: node
   linkType: hard
 
