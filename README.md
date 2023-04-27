@@ -4,6 +4,8 @@ UI component library for React based on [shadcn ui](https://ui.shadcn.com).
 
 # Installation
 
+This library is primarily built for our internal use cases but you are free to use it in your project.
+
 ```
 $ npm install -D @edge-ui/react
 ```
