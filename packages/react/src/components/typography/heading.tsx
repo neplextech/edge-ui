@@ -5,12 +5,12 @@ import { VariantProps, cva } from 'class-variance-authority';
 const headingVariants = cva(['scroll-m-20', 'tracking-tight'], {
     variants: {
         size: {
-            h1: 'text-3xl font-extrabold lg:text-5xl',
-            h2: 'border-b pb-2 text-2xl font-semibold transition-colors first:mt-0',
-            h3: 'text-xl font-semibold',
-            h4: 'text-lg font-semibold',
-            h5: 'text-base font-medium',
-            h6: 'text-sm font-medium'
+            h1: 'text-3xl lg:text-5xl font-extrabold',
+            h2: 'text-2xl lg:text-4xl font-semibold transition-colors first:mt-0',
+            h3: 'text-xl lg:text-3xl font-semibold',
+            h4: 'text-lg lg:text-xl font-semibold',
+            h5: 'text-base lg:text-lg font-medium',
+            h6: 'text-sm lg:text-base font-medium'
         }
     },
     defaultVariants: {
@@ -21,10 +21,12 @@ const headingVariants = cva(['scroll-m-20', 'tracking-tight'], {
 export interface HeadingProps
     extends React.HTMLAttributes<HTMLHeadingElement>,
         VariantProps<typeof headingVariants>,
-        React.PropsWithChildren {}
+        React.PropsWithChildren {
+    bordered?: boolean;
+}
 
-export function Heading({ className, children, size = 'h1', ...rest }: HeadingProps) {
-    const clx = cn(headingVariants({ size }), className);
+export function Heading({ className, children, size = 'h1', bordered = false, ...rest }: HeadingProps) {
+    const clx = cn(headingVariants({ size }), bordered ? 'border-b pb-2' : null, className);
 
     switch (size) {
         case 'h1':
