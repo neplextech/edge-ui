@@ -11,6 +11,7 @@ export * from './components/form';
 export * from './hooks';
 export * from './components/hoverCard';
 export * from './components/icons';
+export * from './components/layout';
 export * from './components/loader';
 export * from './components/navigation';
 export * from './components/progress';
