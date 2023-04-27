@@ -1,5 +1,4 @@
-import React from 'react';
-import { Heading, HeadingProps, Paragraph, CodeBlock } from '@edge-ui/react';
+import { Heading, Paragraph } from '@edge-ui/react';
 import ResponsiveImage from '../image/responsiveImage';
 import type { useMDXComponents } from '@mdx-js/react';
 
@@ -7,8 +6,10 @@ export const mdxComponents: ReturnType<typeof useMDXComponents> = {
     // @ts-expect-error
     image: ResponsiveImage,
     p: Paragraph,
-    h1: (props: HeadingProps) => <Heading size="h1">{props.children}</Heading>,
-    h2: (props: HeadingProps) => <Heading size="h2">{props.children}</Heading>,
-    h3: (props: HeadingProps) => <Heading size="h3">{props.children}</Heading>,
-    h4: (props: HeadingProps) => <Heading size="h4">{props.children}</Heading>
+    h1: Heading.H1,
+    h2: Heading.H2,
+    h3: Heading.H3,
+    h4: Heading.H4,
+    h5: Heading.H5,
+    h6: Heading.H6
 };

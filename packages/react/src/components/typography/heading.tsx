@@ -5,10 +5,12 @@ import { VariantProps, cva } from 'class-variance-authority';
 const headingVariants = cva(['scroll-m-20', 'tracking-tight'], {
     variants: {
         size: {
-            h1: 'text-4xl font-extrabold lg:text-5xl',
-            h2: 'border-b pb-2 text-3xl font-semibold transition-colors first:mt-0',
-            h3: 'text-2xl font-semibold',
-            h4: 'text-xl font-semibold'
+            h1: 'text-3xl font-extrabold lg:text-5xl',
+            h2: 'border-b pb-2 text-2xl font-semibold transition-colors first:mt-0',
+            h3: 'text-xl font-semibold',
+            h4: 'text-lg font-semibold',
+            h5: 'text-base font-medium',
+            h6: 'text-sm font-medium'
         }
     },
     defaultVariants: {
@@ -49,7 +51,45 @@ export function Heading({ className, children, size = 'h1', ...rest }: HeadingPr
                     {children}
                 </h4>
             );
+        case 'h5':
+            return (
+                <h5 {...rest} className={clx}>
+                    {children}
+                </h5>
+            );
+        case 'h6':
+            return (
+                <h6 {...rest} className={clx}>
+                    {children}
+                </h6>
+            );
         default:
             throw new TypeError(`invalid size ${size}`);
     }
 }
+
+type StaticHeadingProps = Omit<HeadingProps, 'size'>;
+
+Heading.H1 = function (props: StaticHeadingProps) {
+    return <Heading {...props} size="h1" />;
+};
+
+Heading.H2 = function (props: StaticHeadingProps) {
+    return <Heading {...props} size="h2" />;
+};
+
+Heading.H3 = function (props: StaticHeadingProps) {
+    return <Heading {...props} size="h3" />;
+};
+
+Heading.H4 = function (props: StaticHeadingProps) {
+    return <Heading {...props} size="h4" />;
+};
+
+Heading.H5 = function (props: StaticHeadingProps) {
+    return <Heading {...props} size="h5" />;
+};
+
+Heading.H6 = function (props: StaticHeadingProps) {
+    return <Heading {...props} size="h6" />;
+};
