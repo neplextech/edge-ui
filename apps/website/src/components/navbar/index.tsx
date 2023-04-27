@@ -7,7 +7,8 @@ import {
     Heading,
     GitHubIcon,
     DiscordIcon,
-    useTheme
+    useTheme,
+    Button
 } from '@edge-ui/react';
 import Link from 'next/link';
 import { SunIcon, MoonIcon } from 'lucide-react';
@@ -16,7 +17,7 @@ export default function Navbar() {
     const { isDark, toggle } = useTheme();
 
     return (
-        <NavigationMenu className="justify-around items-center py-2 border-b">
+        <NavigationMenu className="justify-around items-center py-5 border-b-[1.5px] shadow-sm">
             <NavigationMenuList>
                 <Link href="/">
                     <Heading size="h3" className="font-bold">
@@ -48,16 +49,16 @@ export default function Navbar() {
             </NavigationMenuList>
             <NavigationMenuList className="flex flex-row gap-5">
                 <Link href="https://github.com/neplextech" target="_blank">
+                    <span className="sr-only">GitHub</span>
                     <GitHubIcon className="h-5 w-5 cursor-pointer" />
                 </Link>
                 <Link href="/">
+                    <span className="sr-only">Discord</span>
                     <DiscordIcon className="h-5 w-5 cursor-pointer" />
                 </Link>
-                {isDark ? (
-                    <SunIcon className="h-5 w-5 cursor-pointer" onClick={toggle} />
-                ) : (
-                    <MoonIcon className="h-5 w-5 cursor-pointer" onClick={toggle} />
-                )}
+                <button aria-label="Toggle Theme" onClick={toggle}>
+                    {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+                </button>
             </NavigationMenuList>
         </NavigationMenu>
     );

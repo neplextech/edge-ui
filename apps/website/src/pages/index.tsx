@@ -1,66 +1,62 @@
-import { Button, CodeBlock, Heading, Paragraph } from '@edge-ui/react';
-import Navbar from '../components/navbar';
-
-const exampleCode = `import { EdgeUIProvider } from '@edge-ui/react';
-
-// root
-export default function Application({ Component, pageProps }: AppProps) {
-    return (
-        <EdgeUIProvider>
-            <Component {...pageProps} />
-        </EdgeUIProvider>
-    );
-}
-
-// some other component
-import { Heading, Button } from '@edge-ui/react';
-
-export function MyComponent() {
-    const [count, setCount] = useState(0);
-
-    const counter = () => {
-        setCount(p => p + 1);
-    };
-
-    return (
-        <div>
-            <Heading>Count: {count}</Heading>
-            <Button onClick={counter}>
-                Click Me!
-            </Button>
-        </div>
-    );
-}`;
+import { Heading, Layout, Card, CardHeader, CardTitle, CardDescription, CardContent, GitHubIcon } from '@edge-ui/react';
+import Link from 'next/link';
+import { ComponentIcon, PenToolIcon } from 'lucide-react';
 
 export default function Home() {
     return (
-        <main className="my-5 px-[12.8rem]">
-            <Heading.H1>Edge UI</Heading.H1>
-            <Paragraph className="text-xl">Minimal ui components for React</Paragraph>
-            <div className="flex flex-row gap-2 my-4">
-                <Button>Get Started</Button>
-                <Button variant="outline">Components</Button>
-            </div>
-            <div className="my-3">
-                <div className="mb-4">
-                    <Heading size="h4">Installation</Heading>
-                    <CodeBlock language="pwsh">{'npm install -D @edge-ui/react'}</CodeBlock>
-                </div>
-                <div>
-                    <Heading size="h4">Example</Heading>
-                    <CodeBlock lines language="typescript">
-                        {exampleCode}
-                    </CodeBlock>
+        <Layout horizontalSpacing={'sm'} verticalSpacing={'md'}>
+            <div className="text-center space-y-8">
+                <Heading.H1>EdgeUI</Heading.H1>
+                <Heading.H2 className="text-[#666] dark:text-[#7f7f7f]">
+                    An open source design system for building modern websites and applications.
+                </Heading.H2>
+                <div className="flex justify-center gap-4 font-semibold">
+                    <Link className="px-7 py-3 bg-primary text-primary-foreground rounded-md" href={'/docs'}>
+                        Get Started
+                    </Link>
+                    <Link className="px-7 py-3 border-2 shadow-md rounded-md" href={'/components'}>
+                        Components
+                    </Link>
                 </div>
             </div>
-            <div>
-                <Heading.H1 bordered>Typography</Heading.H1>
-                <Heading.H2 bordered>Typography</Heading.H2>
-                <Heading.H3 bordered>Typography</Heading.H3>
-                <Heading.H4 bordered>Typography</Heading.H4>
-                <Heading.H5 bordered>Typography</Heading.H5>
-                <Heading.H6 bordered>Typography</Heading.H6>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 place-content-center gap-10">
+                <Link href={'/components'}>
+                    <Card className="shadow-md hover:shadow-lg hover:scale-105 transition-all ease-in-out duration-500 border-2">
+                        <CardHeader className="flex flex-row items-center">
+                            <ComponentIcon className="w-6 h-6" />
+                            <CardTitle className="ml-3 font-bold">Components</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>Ever-increasing list of concise and aesthetic components.</CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
+                <Link href={'/'}>
+                    <Card className="shadow-md hover:shadow-lg hover:scale-105 transition-all ease-in-out duration-500 border-2">
+                        <CardHeader className="flex flex-row items-center">
+                            <PenToolIcon className="w-6 h-6" />
+                            <CardTitle className="ml-3 font-bold">Customizable</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>Configure sizes, colors, appearances, shapes, and more.</CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
+                <Link href={'https://github.com/neplextech/edge-ui'} target="_blank">
+                    <Card className="shadow-md hover:shadow-lg hover:scale-105 transition-all ease-in-out duration-500 border-2">
+                        <CardHeader className="flex flex-row items-center">
+                            <GitHubIcon className="w-6 h-6" />
+                            <CardTitle className="ml-3 font-bold">Open Sourced</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                Geist is open sourced and available free under MIT license.
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
             </div>
-        </main>
+        </Layout>
     );
 }
