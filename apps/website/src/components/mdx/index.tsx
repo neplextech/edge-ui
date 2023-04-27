@@ -3,13 +3,11 @@ import ResponsiveImage from '../image/responsiveImage';
 import type { useMDXComponents } from '@mdx-js/react';
 
 export const mdxComponents: ReturnType<typeof useMDXComponents> = {
-    // @ts-expect-error
-    image: ResponsiveImage,
-    p: Paragraph,
-    h1: Heading.H1,
-    h2: Heading.H2,
-    h3: Heading.H3,
-    h4: Heading.H4,
-    h5: Heading.H5,
-    h6: Heading.H6
+    p: (props: any) => <Paragraph {...props} />,
+    h1: (props: any) => <Heading.H1 {...props} />,
+    h2: (props: any) => <Heading.H2 {...props} />,
+    h3: (props: any) => <Heading.H3 {...props} />,
+    h4: (props: any) => <Heading.H4 {...props} />,
+    h5: (props: any) => <Heading.H5 {...props} />,
+    h6: (props: any) => <Heading.H6 {...props} />
 };
