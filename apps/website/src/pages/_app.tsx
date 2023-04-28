@@ -1,5 +1,5 @@
-import '../../styles/globals.css';
 import '@edge-ui/react/styles.css';
+import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Manrope } from 'next/font/google';
 import { EdgeUIProvider, Layout, Toaster } from '@edge-ui/react';

@@ -1,4 +1,14 @@
-import { Heading, Layout, Card, CardHeader, CardTitle, CardDescription, CardContent, GitHubIcon } from '@edge-ui/react';
+import {
+    Heading,
+    Layout,
+    Card,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardContent,
+    GitHubIcon,
+    Flex
+} from '@edge-ui/react';
 import Link from 'next/link';
 import { ComponentIcon, PenToolIcon } from 'lucide-react';
 
@@ -10,14 +20,14 @@ export default function Home() {
                 <Heading.H2 className="text-muted-foreground">
                     Minimal UI components library for building modern websites and applications using React.
                 </Heading.H2>
-                <div className="flex justify-center gap-4 font-semibold">
+                <Flex justify="center" gap="md" className="flex-wrap font-semibold">
                     <Link className="px-7 py-3 bg-primary text-primary-foreground rounded-md" href={'/docs'}>
                         Get Started
                     </Link>
                     <Link className="px-7 py-3 border-2 shadow-md rounded-md" href={'/components'}>
                         Components
                     </Link>
-                </div>
+                </Flex>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 place-content-center gap-10">

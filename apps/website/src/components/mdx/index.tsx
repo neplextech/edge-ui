@@ -1,4 +1,4 @@
-import { Heading, Paragraph } from '@edge-ui/react';
+import { CodeBlock, Heading, Paragraph } from '@edge-ui/react';
 import ResponsiveImage from '../image/responsiveImage';
 import type { useMDXComponents } from '@mdx-js/react';
 
@@ -9,5 +9,10 @@ export const mdxComponents: ReturnType<typeof useMDXComponents> = {
     h3: (props: any) => <Heading.H3 {...props} />,
     h4: (props: any) => <Heading.H4 {...props} />,
     h5: (props: any) => <Heading.H5 {...props} />,
-    h6: (props: any) => <Heading.H6 {...props} />
+    h6: (props: any) => <Heading.H6 {...props} />,
+    pre: (props: any) => {
+        const { className, children } = props.children.props;
+        const language = className.match(/language-(\w)/)?.[1] ?? 'text';
+        return <CodeBlock language={language}>{children}</CodeBlock>;
+    }
 };
