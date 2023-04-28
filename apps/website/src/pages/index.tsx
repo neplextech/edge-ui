@@ -16,7 +16,7 @@ export default function Home() {
     return (
         <Layout horizontalSpacing={'sm'} verticalSpacing={'md'}>
             <div className="text-center space-y-8 max-w-[850px] mx-auto">
-                <Heading.H1>EdgeUI</Heading.H1>
+                <Heading.H1 className="lg:text-7xl">EdgeUI</Heading.H1>
                 <Heading.H2 className="text-muted-foreground">
                     Minimal UI components library for building modern websites and applications using React.
                 </Heading.H2>

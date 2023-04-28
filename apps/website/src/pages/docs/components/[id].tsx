@@ -4,7 +4,7 @@ import React from 'react';
 // just a mockup for styling purpose, docs shall be rendered dynamically
 export default function Components() {
     return (
-        <main className="my-5 px-[12.8rem]">
+        <div className="">
             <Heading>Button</Heading>
             <Heading size="h4" className="font-semibold text-muted-foreground">
                 Displays a button or a component that looks like a button.
@@ -40,6 +40,6 @@ export default function Components() {
                     '}'
                 ].join('\n')}
             </CodeBlock>
-        </main>
+        </div>
     );
 }

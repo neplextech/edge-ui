@@ -7,20 +7,16 @@ import {
     Heading,
     GitHubIcon,
     DiscordIcon,
-    useTheme,
-    useBreakpoint
+    useTheme
 } from '@edge-ui/react';
 import Link from 'next/link';
 import { SunIcon, MoonIcon } from 'lucide-react';
 
 export default function Navbar() {
     const { isDark, toggle } = useTheme();
-    const matches = useBreakpoint('min-width: 768px');
-    const style = matches ? 'text-4xl' : 'text-sm';
-    console.log('matches', matches, 'style', style);
 
     return (
-        <NavigationMenu className="justify-around items-center py-5 border-b-[1.5px] shadow-sm">
+        <NavigationMenu className="grid grid-flow-col grid-cols-4 py-5 border-b-[1.5px] shadow-sm">
             <NavigationMenuList>
                 <Link href="/">
                     <Heading size="h3" className="font-bold">
@@ -28,10 +24,10 @@ export default function Navbar() {
                     </Heading>
                 </Link>
             </NavigationMenuList>
-            <div className={`hidden md:block md:visible`}>
+            <div className={`hidden md:block md:visible col-span-2`}>
                 <NavigationMenuList>
                     <NavigationMenuItem>
-                        <Link href="/documentation" legacyBehavior passHref>
+                        <Link href="/docs" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Documentation
                             </NavigationMenuLink>

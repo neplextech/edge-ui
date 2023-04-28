@@ -5,8 +5,6 @@ import { Manrope } from 'next/font/google';
 import { EdgeUIProvider, Layout, Toaster } from '@edge-ui/react';
 import Navbar from '../components/navbar';
 import { useRouter } from 'next/router';
-import { MDXProvider } from '@mdx-js/react';
-import { mdxComponents } from '../components/mdx';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -16,25 +14,22 @@ const manrope = Manrope({
 
 function MyApp({ Component, pageProps }: AppProps) {
     const { pathname } = useRouter();
-
     return (
         <EdgeUIProvider fontSans={manrope.style.fontFamily}>
             <Toaster />
             <Navbar />
-            {['/components', '/documentation'].some((p) => pathname.startsWith(p)) ? (
-                <MDXProvider components={mdxComponents as any}>
-                    <Layout horizontalSpacing={'sm'} verticalSpacing={'md'} className="justify-around items-center">
-                        <div className="grid grid-rows-3 grid-flow-col gap-4">
-                            <div className="row-span-3">sidebar</div>
-                            <section className="col-span-3">
-                                <Component {...pageProps} />
-                            </section>
-                        </div>
-                    </Layout>
-                </MDXProvider>
-            ) : (
-                <Component {...pageProps} />
-            )}
+            <Layout horizontalSpacing={'sm'} className="justify-around items-center mt-10">
+                {['/docs', '/components'].some((p) => pathname.startsWith(p)) ? (
+                    <div className="grid grid-rows-1 grid-flow-col gap-4">
+                        <aside className="row-span-3">sidebar</aside>
+                        <section className="col-span-3">
+                            <Component {...pageProps} />
+                        </section>
+                    </div>
+                ) : (
+                    <Component {...pageProps} />
+                )}
+            </Layout>
         </EdgeUIProvider>
     );
 }

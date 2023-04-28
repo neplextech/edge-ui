@@ -2,7 +2,7 @@ import * as React from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '../../utility';
 
-const layoutVariants = cva('w-[90%] sm:w-[85%] mx-auto my-16', {
+const layoutVariants = cva('w-[90%] sm:w-[85%] mx-auto', {
     variants: {
         horizontalSpacing: {
             sm: 'md:w-[80%]',
