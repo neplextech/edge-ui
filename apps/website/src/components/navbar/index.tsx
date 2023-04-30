@@ -7,24 +7,29 @@ import {
     Heading,
     GitHubIcon,
     DiscordIcon,
-    useTheme
+    useTheme,
+    Button
 } from '@edge-ui/react';
 import Link from 'next/link';
-import { SunIcon, MoonIcon } from 'lucide-react';
+import { SunIcon, MoonIcon, Menu } from 'lucide-react';
 
-export default function Navbar() {
+interface Props {
+    onOpen: () => void;
+}
+export default function Navbar({ onOpen }: Props) {
     const { isDark, toggle } = useTheme();
-
     return (
-        <NavigationMenu className="grid grid-flow-col grid-cols-4 py-5 border-b-[1.5px] shadow-sm">
+        <NavigationMenu className="grid grid-flow-col grid-cols-2 md:grid-cols-4 py-5 border-b-[1.5px] shadow-sm">
             <NavigationMenuList>
-                <Link href="/">
-                    <Heading size="h3" className="font-bold">
-                        EdgeUI
-                    </Heading>
-                </Link>
+                <NavigationMenuItem>
+                    <Link href="/">
+                        <Heading size="h3" className="font-bold">
+                            EdgeUI
+                        </Heading>
+                    </Link>
+                </NavigationMenuItem>
             </NavigationMenuList>
-            <div className={`hidden md:block md:visible col-span-2`}>
+            <div className={`hidden md:block col-span-2`}>
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <Link href="/docs" legacyBehavior passHref>
@@ -51,7 +56,7 @@ export default function Navbar() {
                 </NavigationMenuList>
             </div>
 
-            <div className={`hidden md:block md:visible`}>
+            <div className={`hidden md:block`}>
                 <NavigationMenuList className="flex flex-row gap-5">
                     <Link href="https://github.com/neplextech" target="_blank">
                         <span className="sr-only">GitHub</span>
@@ -66,6 +71,15 @@ export default function Navbar() {
                     </button>
                 </NavigationMenuList>
             </div>
+
+            <NavigationMenuList className="md:hidden">
+                <NavigationMenuItem>
+                    <Button variant="ghost" onClick={onOpen}>
+                        <span className="sr-only">Open Sidebar</span>
+                        <Menu />
+                    </Button>
+                </NavigationMenuItem>
+            </NavigationMenuList>
         </NavigationMenu>
     );
 }

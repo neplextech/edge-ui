@@ -14,7 +14,7 @@ import { ComponentIcon, PenToolIcon } from 'lucide-react';
 
 export default function Home() {
     return (
-        <Layout horizontalSpacing={'sm'} verticalSpacing={'md'}>
+        <>
             <div className="text-center space-y-8 max-w-[850px] mx-auto">
                 <Heading.H1 className="lg:text-7xl">EdgeUI</Heading.H1>
                 <Heading.H2 className="text-muted-foreground">
@@ -77,6 +77,6 @@ export default function Home() {
                     </Card>
                 </Link>
             </div>
-        </Layout>
+        </>
     );
 }
