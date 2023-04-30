@@ -15,27 +15,16 @@ const manrope = Manrope({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const [isOpen, setIsOpen] = useState(false);
-
-    function onClose() {
-        setIsOpen(false);
-    }
-    function onOpen() {
-        setIsOpen(true);
-    }
-
     const { pathname } = useRouter();
     return (
         <EdgeUIProvider fontSans={manrope.style.fontFamily}>
             <Toaster />
-            <Navbar onOpen={onOpen} />
-
-            <Sidebar isOpen={isOpen} onClose={onClose} />
+            <Navbar />
 
             <Layout horizontalSpacing={'sm'} className="justify-around items-center my-16">
                 {['/docs', '/components'].some((p) => pathname.startsWith(p)) ? (
                     <div className="grid grid-rows-1 grid-flow-col gap-4">
-                        <aside className="row-span-3">sidebar</aside>
+                        <Sidebar />
                         <section className="col-span-3">
                             <Component {...pageProps} />
                         </section>
