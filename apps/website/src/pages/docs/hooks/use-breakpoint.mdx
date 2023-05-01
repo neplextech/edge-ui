@@ -1,1 +1,25 @@
 # useBreakpoint
+
+This hook can be used to verify the breakpoint using media query.
+
+### Signature
+
+```ts
+type Breakpoint = `${'min' | 'max'}-${'width' | 'height'}: ${number}${'px' | 'rem' | 'em'}`;
+
+function useBreakpoint(breakpoint: Breakpoint): boolean;
+```
+
+```jsx
+import { useBreakpoint } from '@edge-ui/react';
+
+export function Component() {
+    const matches = useBreakpoint('min-width: 50px');
+
+    return (
+        <>
+            <h1>Breakpoint matches: {matches}</h1>
+        </h1>
+    );
+}
+```
