@@ -10,10 +10,12 @@ import {
     useTheme,
     Button,
     useToggle,
-    cn
+    cn,
+    ScrollArea
 } from '@edge-ui/react';
 import Link from 'next/link';
 import { SunIcon, MoonIcon, Menu, X } from 'lucide-react';
+import { DocMenuSidebar } from '../sidebar';
 
 const Links = [
     { label: 'Documentation', href: '/docs' },
@@ -107,19 +109,24 @@ function MobileNav({ isOpen, isDark, toggleDark, onClose }: MobileNavProps) {
                         EdgeUI
                     </Heading>
                 </Link>
-                <ul className="mx-4">
-                    {Links.map((m, i) => (
-                        <li className="w-full" key={i}>
-                            <Link
-                                href={m.href}
-                                className="py-2.5 block px-3 rounded-lg hover:bg-accent"
-                                onClick={onClose}
-                            >
-                                {m.label}
-                            </Link>
-                        </li>
+                <ScrollArea>
+                    {DocMenuSidebar.map((doc, idx) => (
+                        <div key={idx}>
+                            <Heading.H4>{doc.name}</Heading.H4>
+                            {doc.links.map((link, i) => (
+                                <div className="w-full" key={idx + i}>
+                                    <Link
+                                        href={link.href}
+                                        className="py-2.5 block px-3 rounded-lg hover:bg-accent"
+                                        onClick={onClose}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
                     ))}
-                </ul>
+                </ScrollArea>
                 <Button onClick={onClose} variant="ghost" className="absolute -top-1 right-5">
                     <span className="sr-only">Close Sidebar</span>
                     <X />

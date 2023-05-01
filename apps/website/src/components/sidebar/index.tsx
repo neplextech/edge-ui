@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 // transition-transform -translate-x-full sm:translate-x-0
 
-const menus = [
+export const DocMenuSidebar = [
     {
         name: 'Documentation',
         path: '/docs',
@@ -70,7 +70,7 @@ export function Sidebar() {
         <aside className="hidden lg:block">
             <ScrollArea className="h-[78vh]">
                 <div className="flex flex-col gap-5">
-                    {menus.map((menu, idx) => {
+                    {DocMenuSidebar.map((menu, idx) => {
                         return (
                             <div key={idx} className="flex flex-col gap-1">
                                 <Heading.H4>{menu.name}</Heading.H4>
