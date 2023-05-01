@@ -56,12 +56,12 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Toaster />
             <Navbar />
 
-            <Layout horizontalSpacing={'sm'} className="justify-around items-center my-16">
+            <Layout className="justify-around items-center my-16">
                 {['/docs', '/components'].some((p) => pathname.startsWith(p)) ? (
                     <>
-                        <div className="lg:flex lg:gap-5">
+                        <div className="md:flex md:gap-5">
                             <Sidebar />
-                            <section className="lg:flex-1">
+                            <section className="md:flex-1 overflow-x-hidden">
                                 <MDXProvider components={mdxComponents}>
                                     <Component {...pageProps} />
                                 </MDXProvider>

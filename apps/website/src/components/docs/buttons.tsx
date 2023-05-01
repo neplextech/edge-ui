@@ -3,7 +3,7 @@ import { Button } from '@edge-ui/react';
 
 export function Buttons() {
     return (
-        <div className="flex flex-col lg:flex-row gap-4 border p-3 rounded-md">
+        <div className="flex flex-wrap gap-y-6 gap-x-4 border p-3 rounded-md">
             {(['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'] as const).map((m, i) => {
                 return (
                     <Button key={i} variant={m}>

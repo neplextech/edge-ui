@@ -1,8 +1,6 @@
 import { Heading, ScrollArea } from '@edge-ui/react';
 import Link from 'next/link';
 
-// transition-transform -translate-x-full sm:translate-x-0
-
 const menus = [
     {
         name: 'Documentation',
@@ -67,7 +65,7 @@ const menus = [
 
 export function Sidebar() {
     return (
-        <aside className="hidden lg:block">
+        <aside className="hidden md:block">
             <ScrollArea className="h-[78vh]">
                 <div className="flex flex-col gap-5">
                     {menus.map((menu, idx) => {

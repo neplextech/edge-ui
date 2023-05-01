@@ -27,7 +27,7 @@ export default function Navbar() {
 
     return (
         <>
-            <NavigationMenu className="justify-between px-5 md:px-0 md:justify-center grid grid-flow-col md:grid-cols-4 py-5 border-b-[1.5px] shadow-sm">
+            <NavigationMenu className="justify-between px-5 md:px-0 md:justify-center grid grid-flow-col md:grid-cols-4 py-5 border-b-[1.5px] shadow-sm w-full">
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <Link href="/">
