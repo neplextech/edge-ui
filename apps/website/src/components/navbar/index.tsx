@@ -116,7 +116,7 @@ function MobileNav({ isOpen, isDark, toggleDark, onClose }: MobileNavProps) {
                             {doc.links.map((link, i) => (
                                 <div className="w-full" key={idx + i}>
                                     <Link
-                                        href={link.href}
+                                        href={`${doc.path}${link.href}`}
                                         className="py-2.5 block px-3 rounded-lg hover:bg-accent"
                                         onClick={onClose}
                                     >
