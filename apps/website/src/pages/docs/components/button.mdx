@@ -1,0 +1,30 @@
+import { Buttons } from '@/components/docs/buttons';
+
+# Button
+
+Displays a button component.
+
+<br/>
+
+### Variants
+
+<div className="my-5">
+    <Buttons />
+</div>
+
+# Example
+
+```jsx
+import { Button, Heading } from '@edge-ui/react';
+import { useState } from 'react';
+
+export default function Component() {
+    const [count, setCount] = useState(0);
+    return (
+        <>
+            <Heading>Current: {count}</Heading>
+            <Button onClick={() => setCount((p) => p + 1)}>Count</Button>
+        </>
+    );
+}
+```

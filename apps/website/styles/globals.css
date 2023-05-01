@@ -4,6 +4,6 @@
 
 @layer components {
     html {
-        @apply selection:bg-[#ff5a5f] selection:text-white;
+        @apply selection:bg-[#aaaaaa] selection:text-white;
     }
 }

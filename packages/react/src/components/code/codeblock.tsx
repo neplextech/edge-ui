@@ -4,16 +4,18 @@ import { useTheme } from '../../hooks';
 import { cn } from '../../utility';
 import { CopyIcon } from 'lucide-react';
 import { useToast } from '../../hooks/useToast';
+import { Button } from '../button';
 
 export interface CodeBlockProps extends React.PropsWithChildren {
     language?: string;
     children: string;
     lines?: boolean;
+    copy?: boolean;
 }
 
 export const Prism = PrismReact;
 
-export function CodeBlock({ language, children, lines }: CodeBlockProps) {
+export function CodeBlock({ language, children, lines, copy = true }: CodeBlockProps) {
     const { isDark } = useTheme();
     const { toast } = useToast();
 
@@ -36,22 +38,34 @@ export function CodeBlock({ language, children, lines }: CodeBlockProps) {
     };
 
     return (
-        <Highlight language={language || 'text'} theme={isDark ? themes.vsDark : themes.github} code={children}>
+        <Highlight
+            language={language || 'text'}
+            theme={isDark ? themes.vsDark : themes.github}
+            code={String(children).trim()}
+        >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                <pre className={cn('p-2 rounded-md relative overflow-y-auto', className)} style={style}>
-                    <CopyIcon
-                        className="absolute right-0 mr-4 hover:cursor-pointer hover:text-gray-500 text-gray-600"
-                        onClick={copyCode}
-                    />
-                    {tokens.map((line, i) => (
-                        <div key={i} {...getLineProps({ line })}>
-                            {lines && <span className="pr-5 pl-3 select-none text-gray-500">{i + 1}</span>}
-                            {line.map((token, key) => (
-                                <span key={key} {...getTokenProps({ token })} />
-                            ))}
-                        </div>
-                    ))}
-                </pre>
+                <div className={cn('mt-3', className, 'relative')}>
+                    {copy && (
+                        <Button
+                            size="sm"
+                            variant="secondary"
+                            className="absolute top-0 right-0 z-10 m-2 border"
+                            onClick={copyCode}
+                        >
+                            <CopyIcon className="hover:cursor-pointer" />
+                        </Button>
+                    )}
+                    <pre className={'p-2 rounded-md overflow-y-auto'} style={style}>
+                        {tokens.map((line, i) => (
+                            <div key={i} {...getLineProps({ line })}>
+                                {lines && <span className="pr-5 pl-3 select-none text-gray-500">{i + 1}</span>}
+                                {line.map((token, key) => (
+                                    <span key={key} {...getTokenProps({ token })} />
+                                ))}
+                            </div>
+                        ))}
+                    </pre>
+                </div>
             )}
         </Highlight>
     );

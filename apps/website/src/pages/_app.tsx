@@ -2,17 +2,52 @@ import '@edge-ui/react/styles.css';
 import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Manrope } from 'next/font/google';
-import { EdgeUIProvider, Layout, Toaster } from '@edge-ui/react';
+import {
+    EdgeUIProvider,
+    Heading,
+    Layout,
+    Paragraph,
+    Toaster,
+    Blockquote,
+    List,
+    ListItem,
+    Code,
+    CodeBlock
+} from '@edge-ui/react';
 import Navbar from '../components/navbar';
 import { useRouter } from 'next/router';
 import { Sidebar } from '@/components/sidebar';
-import { useState } from 'react';
+import { MDXProvider } from '@mdx-js/react';
 
 const manrope = Manrope({
     subsets: ['latin'],
     variable: '--font-sans',
     display: 'swap'
 });
+
+const lgn = (p: string) => {
+    return p?.match(/language-(\w+)/)?.[1] || 'text';
+};
+
+const mdxComponents = {
+    h1: (props: any) => <Heading.H1 {...props} />,
+    h2: (props: any) => <Heading.H2 {...props} />,
+    h3: (props: any) => <Heading.H3 {...props} />,
+    h4: (props: any) => <Heading.H4 {...props} />,
+    h5: (props: any) => <Heading.H5 {...props} />,
+    h6: (props: any) => <Heading.H6 {...props} />,
+    p: (props: any) => <Paragraph {...props} />,
+    blockquote: (props: any) => <Blockquote {...props} />,
+    ul: (props: any) => <List {...props} />,
+    li: (props: any) => <ListItem {...props} />,
+    pre: (props: any) => <div {...props} />,
+    code: (props: any) =>
+        typeof props.children === 'string' && !props.children.includes('\n') ? (
+            <Code {...props} />
+        ) : (
+            <CodeBlock lines language={lgn(props.className)} {...props} />
+        )
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
     const { pathname } = useRouter();
@@ -23,12 +58,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 
             <Layout horizontalSpacing={'sm'} className="justify-around items-center my-16">
                 {['/docs', '/components'].some((p) => pathname.startsWith(p)) ? (
-                    <div className="grid grid-rows-1 grid-flow-col gap-4">
-                        <Sidebar />
-                        <section className="col-span-3">
-                            <Component {...pageProps} />
-                        </section>
-                    </div>
+                    <>
+                        <div className="lg:flex lg:gap-5">
+                            <Sidebar />
+                            <section className="lg:flex-1">
+                                <MDXProvider components={mdxComponents}>
+                                    <Component {...pageProps} />
+                                </MDXProvider>
+                            </section>
+                        </div>
+                    </>
                 ) : (
                     <Component {...pageProps} />
                 )}
