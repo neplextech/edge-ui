@@ -18,7 +18,7 @@ import { SunIcon, MoonIcon, Menu, X } from 'lucide-react';
 const Links = [
     { label: 'Documentation', href: '/docs' },
     { label: 'Components', href: '/components' },
-    { label: 'Examples', href: '/' }
+    { label: 'Hooks', href: '/hooks' }
 ];
 
 export default function Navbar() {
