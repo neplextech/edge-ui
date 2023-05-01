@@ -15,15 +15,24 @@ Displays a button component.
 # Example
 
 ```jsx
-import { Button, Heading } from '@edge-ui/react';
-import { useState } from 'react';
+import { Button } from '@edge-ui/react';
 
 export default function Component() {
-    const [count, setCount] = useState(0);
     return (
         <>
-            <Heading>Current: {count}</Heading>
-            <Button onClick={() => setCount((p) => p + 1)}>Count</Button>
+            <div>
+                <Button variant='default'>Default</Button>
+                <Button variant='destructive'>Destructive</Button>
+                <Button variant='outline'>Outline</Button>
+                <Button variant='secondary'>Secondary</Button>
+                <Button variant='ghost'>Ghost</Button>
+                <Button variant='link'>Link</Button>
+            </div>
+            <div>
+                <Button size='default'>Default</Button>
+                <Button size='sm'>Small</Button>
+                <Button size='lg'>Large</Button>
+            </div>
         </>
     );
 }

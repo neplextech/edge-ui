@@ -10,10 +10,12 @@ import {
     useTheme,
     Button,
     useToggle,
-    cn
+    cn,
+    ScrollArea
 } from '@edge-ui/react';
 import Link from 'next/link';
 import { SunIcon, MoonIcon, Menu, X } from 'lucide-react';
+import { DocMenuSidebar } from '../sidebar';
 
 const Links = [
     { label: 'Documentation', href: '/docs' },
@@ -101,30 +103,35 @@ function MobileNav({ isOpen, isDark, toggleDark, onClose }: MobileNavProps) {
                 if (target === currentTarget) onClose();
             }}
         >
-            <div className="relative shadow-2xl border-r-2 h-full py-7 overflow-y-auto space-y-7 bg-card w-full max-w-[310px]">
+            <div className="relative shadow-2xl border-r-2 h-full py-7 space-y-7 bg-card w-full max-w-[310px] overflow-y-auto">
                 <Link href="/" className="block w-fit px-3 mx-4">
                     <Heading size="h3" className="font-bold" onClick={onClose}>
                         EdgeUI
                     </Heading>
                 </Link>
-                <ul className="mx-4">
-                    {Links.map((m, i) => (
-                        <li className="w-full" key={i}>
-                            <Link
-                                href={m.href}
-                                className="py-2.5 block px-3 rounded-lg hover:bg-accent"
-                                onClick={onClose}
-                            >
-                                {m.label}
-                            </Link>
-                        </li>
+                <ScrollArea className="px-7">
+                    {DocMenuSidebar.map((doc, idx) => (
+                        <div className="my-7" key={idx}>
+                            <Heading.H4 className="mb-1.5">{doc.name}</Heading.H4>
+                            {doc.links.map((link, i) => (
+                                <div className="w-full" key={idx + i}>
+                                    <Link
+                                        href={link.href}
+                                        className="py-2.5 block px-4 rounded-lg hover:bg-accent"
+                                        onClick={onClose}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
                     ))}
-                </ul>
+                </ScrollArea>
                 <Button onClick={onClose} variant="ghost" className="absolute -top-1 right-5">
                     <span className="sr-only">Close Sidebar</span>
                     <X />
                 </Button>
-                <div className="w-full px-3 text-7xl absolute bottom-0 py-5 flex gap-7 justify-around border-t-2 shadow-2xl z-10 bg-gray-100/90 dark:bg-black/90">
+                <div className="fixed w-full px-3 text-7xl bottom-0 py-5 flex gap-7 justify-around border-t-2 shadow-2xl z-10 bg-gray-100/90 dark:bg-black/90 max-w-[310px]">
                     <Link href="https://github.com/neplextech" target="_blank">
                         <span className="sr-only">GitHub</span>
                         <GitHubIcon className="h-7 w-6 cursor-pointer" />
