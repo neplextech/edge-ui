@@ -16,10 +16,10 @@ export default function Home() {
     return (
         <>
             <div className="text-center space-y-8 max-w-[850px] mx-auto">
-                <Heading.H1 className="lg:text-7xl">EdgeUI</Heading.H1>
-                <Heading.H2 className="text-muted-foreground">
+                <Heading.H1 className="text-6xl md:text-7xl">EdgeUI</Heading.H1>
+                <Heading.H3 className="text-muted-foreground">
                     Minimal UI components library for building modern websites and applications using React.
-                </Heading.H2>
+                </Heading.H3>
                 <Flex justify="center" gap="md" className="flex-wrap font-semibold">
                     <Link className="px-7 py-3 bg-primary text-primary-foreground rounded-md" href={'/docs'}>
                         Get Started
@@ -41,7 +41,7 @@ export default function Home() {
                         </CardHeader>
                         <CardContent>
                             <CardDescription>
-                                EdgeUI offers ever-increasing list of concise and minimal components.
+                                EdgeUI offers ever-increasing list of concise and minimal fully customizable components.
                             </CardDescription>
                         </CardContent>
                     </Card>
@@ -56,7 +56,7 @@ export default function Home() {
                         </CardHeader>
                         <CardContent>
                             <CardDescription>
-                                EdgeUI allows you to configure sizes, colors, appearances, shapes, and more.
+                                EdgeUI allows you to easily configure sizes, colors, appearances, shapes, and more.
                             </CardDescription>
                         </CardContent>
                     </Card>
@@ -71,7 +71,8 @@ export default function Home() {
                         </CardHeader>
                         <CardContent>
                             <CardDescription>
-                                EdgeUI is a free and open source project licensed under MIT License.
+                                EdgeUI is completely free and open source project maintained by Neplex and is licensed
+                                under MIT License.
                             </CardDescription>
                         </CardContent>
                     </Card>

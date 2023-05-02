@@ -29,7 +29,8 @@ export function ContextMenuExample() {
                         borderRadius: '10%',
                         border: '1px',
                         borderStyle: 'dashed',
-                        fontSize: '32px'
+                        fontSize: '32px',
+                        userSelect: 'none'
                     }}
                 >
                     Right click here
