@@ -1,1 +1,27 @@
 # useHover
+
+This hook can be used to manage hovered state.
+
+### Signature
+
+```ts
+function useHover<E extends HTMLElement = HTMLElement>(ref: RefObject<E>): boolean;
+```
+
+### Example
+
+```jsx
+import { useRef } from 'react';
+import { useHover } from '@edge-ui/react';
+
+export function Component() {
+    const divRef = useRef(null);
+    const isHovered = useHover(divRef);
+
+    return (
+        <div className="h-10 w-10" ref={divRef}>
+            <h1>{isHovered ? 'Meow' : 'Hover Me'}</h1>
+        </div>
+    );
+}
+```

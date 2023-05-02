@@ -1,1 +1,85 @@
+import { Alert, AlertDescription, AlertTitle, Code } from '@edge-ui/react';
+import { AlertCircle } from 'lucide-react';
+
 # Installation
+
+```bash
+$ npm install -D @edge-ui/react
+```
+
+## TailwindCSS setup
+
+- Go to `globals.css` or the main css entrypoint and add the following lines at the top
+
+```css
+@tailwind components;
+@tailwind utilities;
+```
+
+<Alert variant="destructive" className='mt-5'>
+    <AlertCircle />
+    <AlertTitle>Important Note</AlertTitle>
+    <AlertDescription>
+        Do not include <Code>{'@tailwind base;'}</Code> as it can cause issues with the styles.
+    </AlertDescription>
+</Alert>
+
+Optionally, Add the following to your `tailwind.config.js` for dark mode support.
+
+```js
+module.exports = {
+    darkMode: ['class']
+    // other config
+};
+```
+
+- Import the style in your code
+
+```jsx
+import '@edge-ui/react/styles.css';
+import 'globals.css';
+```
+
+## React
+
+Add `EdgeUIProvider` to your main component.
+
+```jsx
+import '@edge-ui/react/styles.css';
+import 'globals.css';
+import { EdgeUIProvider } from '@edge-ui/react';
+
+export function Main({ Component, pageProps }) {
+    return (
+        <EdgeUIProvider>
+            <Component {...pageProps}>
+        </EdgeUIProvider>
+    );
+}
+```
+
+## Using custom font
+
+By default EdgeUI injects manrope font to the css. You may want to disable that behavior if you prefer custom font.
+
+Here is an example of using `next/font` with EdgeUI
+
+```js
+import { Manrope } from 'next/font/google';
+import { EdgeUIProvider } from '@edge-ui/react';
+
+// you can use other font if you want
+const manrope = Manrope({
+    subsets: ['latin'],
+    variable: '--font-sans',
+    display: 'swap'
+});
+
+export function Main({ Component, pageProps }) {
+    return (
+        <EdgeUIProvider fontSans={manrope.style.fontFamily}>
+            <Component {...pageProps}>
+        </EdgeUIProvider>
+    );
+}
+```

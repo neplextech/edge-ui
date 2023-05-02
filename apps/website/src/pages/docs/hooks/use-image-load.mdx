@@ -1,1 +1,35 @@
 # useImageLoad
+
+This hook can be used to manage image load/error event.
+
+### Signature
+
+```ts
+interface ImageLoadState {
+    error: Error | null;
+    loaded: boolean;
+}
+
+type ImageLoadAction = ImageLoadState & {
+    onLoad: () => void;
+    onError: (e: Error) => void;
+};
+
+function useImageLoad(): ImageLoadAction;
+```
+
+### Example
+
+```jsx
+import { useRef } from 'react';
+import { useImageLoad } from '@edge-ui/react';
+
+export function ImageComponent(props) {
+    const { onLoad, onError, error } = useImageLoad();
+
+    // return fallback image on error
+    if (error) return <img src="/fallback.webp" />;
+
+    return <img {...props} onLoad={onLoad} onError={onError} />;
+}
+```

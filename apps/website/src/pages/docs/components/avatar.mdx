@@ -1,1 +1,24 @@
+import { AvatarExample } from '@/components/docs/avatar';
+
 # Avatar
+
+Displays an avatar component.
+
+<AvatarExample />
+
+<br />
+
+### Example
+
+```jsx
+import { Avatar, AvatarFallback, AvatarImage } from '@edge-ui/react';
+
+export function AvatarExample() {
+    return (
+        <Avatar>
+            <AvatarImage src="https://github.com/neplextech.png" alt="@neplextech" />
+            <AvatarFallback>NT</AvatarFallback>
+        </Avatar>
+    );
+}
+```

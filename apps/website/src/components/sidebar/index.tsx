@@ -1,4 +1,4 @@
-import { Heading, ScrollArea } from '@edge-ui/react';
+import { Heading } from '@edge-ui/react';
 import Link from 'next/link';
 
 export const DocMenuSidebar = [
@@ -27,6 +27,7 @@ export const DocMenuSidebar = [
             { name: 'Dialog', href: '/dialog' },
             { name: 'Form', href: '/form' },
             { name: 'Hover Card', href: '/hover-card' },
+            { name: 'Label', href: '/label' },
             { name: 'Layout', href: '/layout' },
             { name: 'Loader', href: '/loader' },
             { name: 'Navigation', href: '/navigation' },
@@ -65,8 +66,8 @@ export const DocMenuSidebar = [
 
 export function Sidebar() {
     return (
-        <aside className="hidden md:block">
-            <ScrollArea className="h-[78vh]">
+        <aside className="hidden md:block w-[15%]">
+            <div className="h-screen overflow-y-auto overflow-x-hidden">
                 <div className="flex flex-col gap-5">
                     {DocMenuSidebar.map((menu, idx) => {
                         return (
@@ -81,7 +82,7 @@ export function Sidebar() {
                         );
                     })}
                 </div>
-            </ScrollArea>
+            </div>
         </aside>
     );
 }

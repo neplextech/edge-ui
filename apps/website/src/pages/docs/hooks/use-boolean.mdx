@@ -1,6 +1,6 @@
 # useBoolean
 
-This hook can be used to manage boolean state.
+This hook can be used to manage boolean state. It is very similar to [useToggle](/docs/hooks/use-toggle) hook.
 
 ### Signature
 
@@ -18,6 +18,8 @@ interface BooleanAction {
 function useBoolean(defaultValue?: boolean): BooleanAction;
 ```
 
+### Example
+
 ```jsx
 import { useBoolean } from '@edge-ui/react';
 
@@ -28,7 +30,7 @@ export function Component() {
         <>
             <h1>Current Value: {state}</h1>
             <button onClick={toggle}>Toggle</button>
-        </h1>
+        </>
     );
 }
 ```

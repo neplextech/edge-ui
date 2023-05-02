@@ -18,6 +18,7 @@ import Navbar from '../components/navbar';
 import { useRouter } from 'next/router';
 import { Sidebar } from '@/components/sidebar';
 import { MDXProvider } from '@mdx-js/react';
+import Link from 'next/link';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -41,11 +42,12 @@ const mdxComponents = {
     ul: (props: any) => <List {...props} />,
     li: (props: any) => <ListItem {...props} />,
     pre: (props: any) => <div {...props} />,
+    a: (props: any) => <Link className="underline text-blue-500 hover:text-blue-700" {...props} />,
     code: (props: any) =>
         typeof props.children === 'string' && !props.children.includes('\n') ? (
             <Code {...props} />
         ) : (
-            <CodeBlock lines language={lgn(props.className)} {...props} />
+            <CodeBlock lines={props.children.trim().includes('\n')} language={lgn(props.className)} {...props} />
         )
 };
 
@@ -56,10 +58,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Toaster />
             <Navbar />
 
-            <Layout className="justify-around items-center my-16">
+            <Layout className="justify-around items-center my-7">
                 {['/docs', '/components'].some((p) => pathname.startsWith(p)) ? (
                     <>
-                        <div className="md:flex md:gap-5">
+                        <div className="md:flex md:gap-14">
                             <Sidebar />
                             <section className="md:flex-1 overflow-x-hidden">
                                 <MDXProvider components={mdxComponents}>

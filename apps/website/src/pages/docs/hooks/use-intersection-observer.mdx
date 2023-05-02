@@ -1,1 +1,42 @@
 # useIntersectionObserver
+
+This hook can be used to manage intersection observer.
+
+### Signature
+
+```ts
+interface Args extends IntersectionObserverInit {
+    freezeOnceVisible?: boolean;
+}
+
+function useIntersectionObserver(ref: RefObject<Element>, init: Args = {}): IntersectionObserverEntry | null;
+```
+
+### Example
+
+```jsx
+import { useRef } from 'react';
+import { useIntersectionObserver } from '@edge-ui/react';
+
+function ChildComponent({ title }) {
+    const ref = useRef(null);
+    const entry = useIntersectionObserver(ref);
+    const isVisible = !!entry?.isIntersecting;
+
+    return (
+        <div ref={ref} className="min-h-screen flex justify-center items-center text-3xl border border-dashed">
+            <h1>{title}</h1>
+        </div>
+    );
+}
+
+export default function Component() {
+    return (
+        <>
+            {Array.from({ length: 5 }).map((_, index) => (
+                <ChildComponent key={index + 1} title={`${index + 1}`} />
+            ))}
+        </>
+    );
+}
+```

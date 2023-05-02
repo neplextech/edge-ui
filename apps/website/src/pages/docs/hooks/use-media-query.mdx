@@ -1,1 +1,25 @@
 # useMediaQuery
+
+This hook can be used to handle media query.
+
+### Signature
+
+```ts
+function useMediaQuery(query: string): boolean;
+```
+
+### Example
+
+```jsx
+import { useMediaQuery } from '@edge-ui/react';
+
+export function Component() {
+    const matches = useMediaQuery('(min-width: 50px)');
+
+    return (
+        <>
+            <h1>Matches: {matches}</h1>
+        </>
+    );
+}
+```

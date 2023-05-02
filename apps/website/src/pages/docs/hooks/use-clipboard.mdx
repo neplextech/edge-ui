@@ -11,6 +11,8 @@ type ClipboardTextContent = string | null;
 function useClipboard(breakpoint: Breakpoint): [ClipboardTextContent, CopyTextContentCallback];
 ```
 
+### Example
+
 ```jsx
 import { useClipboard } from '@edge-ui/react';
 
@@ -19,9 +21,13 @@ export function Component() {
 
     return (
         <>
-            <button onClick={() => {
-                copyContent('Content to copy');
-            }}>Copy</button>
+            <button
+                onClick={() => {
+                    copyContent('Content to copy');
+                }}
+            >
+                Copy
+            </button>
         </>
     );
 }

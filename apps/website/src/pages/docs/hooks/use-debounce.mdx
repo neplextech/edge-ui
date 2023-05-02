@@ -1,1 +1,36 @@
 # useDebounce
+
+This hook can be used to content based on the provided delay.
+
+### Signature
+
+```ts
+function useDebounce<T>(value: T, delay = 500): T;
+```
+
+### Example
+
+```jsx
+import { useDebounce } from '@edge-ui/react';
+
+export function Component() {
+    const [value, setValue] = useState('');
+    const debouncedValue = useDebounce(value, 1000); // 1 second delay
+
+    const setInput = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+    };
+
+    useEffect(() => {
+        // use debounced value here
+    }, [debouncedValue]);
+
+    return (
+        <div>
+            <p>Value real-time: {value}</p>
+            <p>Debounced value: {debouncedValue}</p>
+            <input type="text" value={value} onChange={setInput} />
+        </div>
+    );
+}
+```
