@@ -61,9 +61,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Layout className="justify-around items-center my-7">
                 {['/docs', '/components'].some((p) => pathname.startsWith(p)) ? (
                     <>
-                        <div className="md:flex md:gap-14">
+                        <div className="md:grid md:grid-cols-5">
                             <Sidebar />
-                            <section className="md:flex-1 overflow-x-hidden">
+                            <section className="md:col-span-4 md:pl-5 overflow-x-hidden">
                                 <MDXProvider components={mdxComponents}>
                                     <Component {...pageProps} />
                                 </MDXProvider>
