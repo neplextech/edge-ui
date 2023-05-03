@@ -68,7 +68,7 @@ export const DocMenuSidebar = [
 
 export function Sidebar() {
     return (
-        <aside className="hidden md:block w-[15%]">
+        <aside className="hidden md:inline-block md:col-span-1">
             <div className="h-screen overflow-y-auto overflow-x-hidden">
                 <div className="flex flex-col gap-5 mb-4">
                     {DocMenuSidebar.map((menu, idx) => {

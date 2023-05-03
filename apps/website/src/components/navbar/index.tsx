@@ -131,7 +131,7 @@ function MobileNav({ isOpen, isDark, toggleDark, onClose }: MobileNavProps) {
                     <span className="sr-only">Close Sidebar</span>
                     <X />
                 </Button>
-                <div className="fixed w-full px-3 text-7xl bottom-0 py-5 flex gap-7 justify-around border-t-2 shadow-2xl z-10 bg-gray-100/90 dark:bg-black/90 max-w-[310px]">
+                <div className="fixed w-full px-3 text-7xl left-0 bottom-0 py-5 flex gap-7 justify-around border-t-2 shadow-2xl z-10 bg-gray-100/90 dark:bg-black/90 max-w-[310px]">
                     <Link href="https://github.com/neplextech" target="_blank">
                         <span className="sr-only">GitHub</span>
                         <GitHubIcon className="h-7 w-6 cursor-pointer" />
