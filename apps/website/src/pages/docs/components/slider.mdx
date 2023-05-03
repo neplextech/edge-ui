@@ -1,11 +1,18 @@
+import { SliderExample } from '@/components/docs/slider';
+
 # Slider
 
 Displays a slider component.
 
-<br/>
+<SliderExample />
+<br />
 
 # Example
 
 ```jsx
-//
+import { Slider } from '@edge-ui/react';
+
+export function SliderExample() {
+    return <Slider defaultValue={[50]} max={100} step={1} className="w-[60%]" />;
+}
 ```

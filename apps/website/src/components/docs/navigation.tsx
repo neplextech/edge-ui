@@ -1,15 +1,3 @@
-import { NavigationExample } from '@/components/docs/navigation';
-
-# Navigation
-
-Displays navigation related components.
-
-<NavigationExample />
-<br />
-
-# Example
-
-```jsx
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -88,4 +76,3 @@ export function NavigationExample() {
         </div>
     );
 }
-```
