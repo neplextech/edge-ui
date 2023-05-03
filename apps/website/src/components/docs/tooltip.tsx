@@ -1,24 +1,10 @@
-import { TooltipExample } from '@/components/docs/tooltip';
-
-# Tooltip
-
-Displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
-
-<TooltipExample />
-
-
-<br />
-
-### Example
-
-```jsx
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@edge-ui/react';
 import { StarIcon } from 'lucide-react';
 import Link from 'next/link';
 
 export function TooltipExample() {
     return (
-        <div className="border p-3 rounded-md flex flex-col gap-3">
+        <div className="border-2 my-2 p-4 rounded-md flex flex-col gap-3">
             <TooltipProvider>
                 <Tooltip>
                     <TooltipTrigger className="mx-auto">
@@ -35,5 +21,3 @@ export function TooltipExample() {
         </div>
     );
 }
-```
-

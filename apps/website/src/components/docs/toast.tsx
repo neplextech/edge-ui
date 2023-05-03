@@ -1,16 +1,3 @@
-import { ToastExample } from '@/components/docs/toast';
-
-# Toast
-
-Display an ephemeral notification.
-
-<ToastExample />
-
-<br />
-
-### Example
-
-```jsx
 import {
     ToastProvider,
     ToastViewport,
@@ -46,5 +33,3 @@ export function ToastExample() {
         </div>
     );
 }
-
-```

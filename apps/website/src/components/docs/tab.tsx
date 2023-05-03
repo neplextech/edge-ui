@@ -1,16 +1,3 @@
-import { TabExample } from '@/components/docs/tab';
-
-# Tab
-
-A user interface element that organizes content into multiple panels, with only one panel visible at a time and accessed through clickable tabs.
-
-<TabExample />
-
-<br />
-
-### Example
-
-```jsx
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@edge-ui/react';
 
 export function TabExample() {
@@ -29,4 +16,3 @@ export function TabExample() {
         </div>
     );
 }
-```
