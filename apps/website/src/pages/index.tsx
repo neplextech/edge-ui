@@ -71,8 +71,7 @@ export default function Home() {
                         </CardHeader>
                         <CardContent>
                             <CardDescription>
-                                EdgeUI is completely free and open source project maintained by Neplex and is licensed
-                                under MIT License.
+                                EdgeUI is completely free and open source project licensed under MIT License.
                             </CardDescription>
                         </CardContent>
                     </Card>
