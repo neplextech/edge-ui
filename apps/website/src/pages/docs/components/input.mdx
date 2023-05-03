@@ -1,0 +1,26 @@
+import { InputExample } from '@/components/docs/inputs';
+
+# Input
+
+Displays form input component.
+
+<InputExample />
+
+<br />
+
+# Example
+
+```jsx
+import { Input, Label } from '@edge-ui/react';
+
+export function InputExample() {
+    return (
+        <div className="border p-3 rounded-md flex justify-center items-center">
+            <div className="flex flex-col gap-2 w-[30%]">
+                <Label htmlFor="username">Username</Label>
+                <Input placeholder="@johndoe" type="text" id="username" />
+            </div>
+        </div>
+    );
+}
+```

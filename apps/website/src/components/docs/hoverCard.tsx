@@ -1,16 +1,3 @@
-import { HoverCardExample } from '@/components/docs/hoverCard';
-
-# Hover Card
-
-Displays a hover card component.
-
-<HoverCardExample />
-
-<br />
-
-# Example
-
-```jsx
 import {
     Avatar,
     AvatarFallback,
@@ -52,4 +39,3 @@ export function HoverCardExample() {
         </div>
     );
 }
-```

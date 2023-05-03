@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 
 export function CardExample() {
     return (
-        <div className="border p-3 rounded-md flex justify-center align-center">
+        <div className="border p-3 rounded-md flex justify-center items-center">
             <Card>
                 <CardHeader>
                     <CardTitle>Card Title</CardTitle>

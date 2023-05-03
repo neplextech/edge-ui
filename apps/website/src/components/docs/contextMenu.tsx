@@ -17,7 +17,7 @@ import {
 
 export function ContextMenuExample() {
     return (
-        <div className="border p-3 rounded-md flex justify-center align-center">
+        <div className="border p-3 rounded-md flex justify-center items-center">
             <ContextMenu>
                 <ContextMenuTrigger
                     style={{
