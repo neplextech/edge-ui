@@ -28,7 +28,7 @@ const Slider = React.forwardRef<
         </SliderPrimitive.Track>
         <SliderPrimitive.Thumb
             className={cn(
-            'block bg-primary thumb w-4 h-4 rounded-full cursor-grab focus:scale-110 hover:scale-110',
+                'block bg-primary thumb w-4 h-4 rounded-full cursor-grab focus:scale-110 hover:scale-110',
                 thumbClassName
             )}
         />

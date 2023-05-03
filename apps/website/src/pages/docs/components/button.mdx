@@ -1,0 +1,39 @@
+import { Buttons } from '@/components/docs/buttons';
+
+# Button
+
+Displays a button component.
+
+<br />
+
+### Variants
+
+<div className="my-5">
+    <Buttons />
+</div>
+
+### Example
+
+```jsx
+import { Button } from '@edge-ui/react';
+
+export default function Component() {
+    return (
+        <>
+            <div>
+                <Button variant="default">Default</Button>
+                <Button variant="destructive">Destructive</Button>
+                <Button variant="outline">Outline</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="ghost">Ghost</Button>
+                <Button variant="link">Link</Button>
+            </div>
+            <div>
+                <Button size="default">Default</Button>
+                <Button size="sm">Small</Button>
+                <Button size="lg">Large</Button>
+            </div>
+        </>
+    );
+}
+```

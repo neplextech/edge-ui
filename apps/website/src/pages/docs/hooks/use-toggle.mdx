@@ -1,0 +1,36 @@
+# useToggle
+
+This hook can be used to manage on/off state. It is very similar to [useBoolean](/docs/hooks/use-boolean) hook.
+
+### Signature
+
+```ts
+interface ToggleAction {
+    state: boolean;
+    isOn: boolean;
+    isOff: boolean;
+    setState: React.Dispatch<React.SetStateAction<boolean>>;
+    toggle: () => void;
+    on: () => void;
+    off: () => void;
+}
+
+function useToggle(defaultValue = false): ToggleAction;
+```
+
+### Example
+
+```jsx
+import { useToggle } from '@edge-ui/react';
+
+export function Component() {
+    const { state, toggle } = useToggle(false);
+
+    return (
+        <>
+            <h1>Current Value: {state}</h1>
+            <button onClick={toggle}>Toggle</button>
+        </>
+    );
+}
+```

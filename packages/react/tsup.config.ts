@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
     dts: true,
     clean: true,
-    entry: ['./src/index.ts', '!./src/*.css'],
+    entry: ['./src/index.ts', '!./src/*.css', '!./src/stories', '!./src/*.stories.tsx'],
     skipNodeModulesBundle: true,
     bundle: true,
     format: ['cjs', 'esm'],

@@ -1,0 +1,36 @@
+import { CodeBlockExample } from '@/components/docs/code';
+
+# Code
+
+Displays an inline code or code block component.
+
+<CodeBlockExample />
+
+<br />
+
+### Example
+
+```jsx
+import { Code, CodeBlock, Heading } from '@edge-ui/react';
+
+const code = `import fs from 'node:fs';
+
+const textStream = fs.createReadStream('./example.txt');
+textStream.pipe(process.stdout);`;
+
+export function CodeBlockExample() {
+    return (
+        <>
+            <div>
+                <Heading.H1>Code Block</Heading.H1>
+                <CodeBlock lines language="js">
+                    {code}
+                </CodeBlock>
+            </div>
+            <div>
+                <Code>Inline Code</Code>
+            </div>
+        </>
+    );
+}
+```

@@ -1,0 +1,23 @@
+# useXEffect
+
+The signature of this hook is similar to `useEffect` but uses `useLayoutEffect` on the browser and `useEffect` on the server.
+
+# Signature
+
+```ts
+function useXEffect(effect: React.EffectCallback, deps?: React.DependencyList | undefined): void;
+```
+
+### Example
+
+```jsx
+import { useXEffect, isBrowser } from '@edge-ui/react';
+
+export function Component() {
+    useXEffect(() => {
+        console.log(`is this browser: ${isBrowser}`);
+    }, []);
+
+    return <h1>EdgeUI</h1>;
+}
+```

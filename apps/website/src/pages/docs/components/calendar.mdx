@@ -1,0 +1,21 @@
+import { CalendarExample } from '@/components/docs/calendar';
+
+# Calendar
+
+Displays an calendar component.
+
+<CalendarExample />
+
+<br />
+
+### Example
+
+```jsx
+import { Calendar } from '@edge-ui/react';
+
+export function CalendarExample() {
+    const [date, setDate] = useState(new Date());
+
+    return <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />;
+}
+```

@@ -1,0 +1,36 @@
+# useBoolean
+
+This hook can be used to manage boolean state. It is very similar to [useToggle](/docs/hooks/use-toggle) hook.
+
+### Signature
+
+```ts
+interface BooleanAction {
+    state: boolean;
+    setState: React.Dispatch<React.SetStateAction<boolean>>;
+    toggle: () => void;
+    setTrue: () => void;
+    setFalse: () => void;
+    isTrue: boolean;
+    isFalse: boolean;
+}
+
+function useBoolean(defaultValue?: boolean): BooleanAction;
+```
+
+### Example
+
+```jsx
+import { useBoolean } from '@edge-ui/react';
+
+export function Component() {
+    const { state, toggle } = useBoolean(false);
+
+    return (
+        <>
+            <h1>Current Value: {state}</h1>
+            <button onClick={toggle}>Toggle</button>
+        </>
+    );
+}
+```

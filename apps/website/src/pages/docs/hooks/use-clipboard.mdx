@@ -1,0 +1,34 @@
+# useClipboard
+
+This hook can be used to manage clipboard content.
+
+### Signature
+
+```ts
+type CopyTextContentCallback = (newContent: string) => Promise<boolean>;
+type ClipboardTextContent = string | null;
+
+function useClipboard(breakpoint: Breakpoint): [ClipboardTextContent, CopyTextContentCallback];
+```
+
+### Example
+
+```jsx
+import { useClipboard } from '@edge-ui/react';
+
+export function Component() {
+    const [content, copyContent] = useClipboard();
+
+    return (
+        <>
+            <button
+                onClick={() => {
+                    copyContent('Content to copy');
+                }}
+            >
+                Copy
+            </button>
+        </>
+    );
+}
+```

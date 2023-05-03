@@ -1,0 +1,32 @@
+import { CardExample } from '@/components/docs/card';
+
+# Card
+
+Displays an card component.
+
+<CardExample />
+
+<br />
+
+### Example
+
+```jsx
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@edge-ui/react';
+
+export function CardExample() {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+                <CardDescription>Card Description</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <p>Card Content</p>
+            </CardContent>
+            <CardFooter>
+                <p>Card Footer</p>
+            </CardFooter>
+        </Card>
+    );
+}
+```

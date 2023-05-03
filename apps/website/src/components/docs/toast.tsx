@@ -1,0 +1,35 @@
+import {
+    ToastProvider,
+    ToastViewport,
+    Toast,
+    ToastTitle,
+    ToastDescription,
+    ToastClose,
+    ToastAction,
+    Button
+} from '@edge-ui/react';
+import { useState } from 'react';
+
+export function ToastExample() {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="border-2 my-2 p-4 rounded-md text-center">
+            <ToastProvider duration={2500}>
+                <Button
+                    onClick={() => {
+                        setOpen(true);
+                    }}
+                >
+                    Get Notification
+                </Button>
+                <Toast open={open} onOpenChange={setOpen}>
+                    <ToastTitle>Notification</ToastTitle>
+                    <ToastDescription>This component display an ephemeral notification.</ToastDescription>
+                </Toast>
+                <ToastClose>Close</ToastClose>
+                <ToastViewport />
+            </ToastProvider>
+        </div>
+    );
+}

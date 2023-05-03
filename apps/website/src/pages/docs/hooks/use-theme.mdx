@@ -1,0 +1,36 @@
+# useTheme
+
+This hook can be used to manage EdgeUI theme.
+
+### Signature
+
+```ts
+interface EdgeUIThemeAction {
+    isDark: boolean;
+    isLight: boolean;
+    toggle: () => void;
+    theme: EdgeUIThemeType;
+    font: string | undefined;
+    setTheme: React.Dispatch<React.SetStateAction<EdgeUIThemeType>>;
+    setFont: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export function useTheme(): EdgeUIThemeAction;
+```
+
+### Example
+
+```jsx
+import { useTheme, EdgeUIProvider } from '@edge-ui/react';
+
+export function Component() {
+    const { theme, toggle } = useTheme();
+
+    return (
+        <EdgeUIProvider>
+            <h1>Current Theme: {theme}</h1>
+            <button onClick={toggle}>Switch Theme</button>
+        </EdgeUIProvider>
+    );
+}
+```
