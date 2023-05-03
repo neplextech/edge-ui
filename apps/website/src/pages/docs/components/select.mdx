@@ -1,1 +1,44 @@
+import { SelectExample } from '@/components/docs/inputs';
+
 # Select
+
+Displays a select component.
+
+<SelectExample />
+<br />
+
+# Example
+
+```jsx
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue
+} from '@edge-ui/react';
+
+export function SelectExample() {
+    return (
+        <div className="border p-3 rounded-md flex justify-center items-center">
+            <Select>
+                <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Select a language" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectGroup>
+                        <SelectLabel>Programming Languages</SelectLabel>
+                        <SelectItem value="typescript">TypeScript</SelectItem>
+                        <SelectItem value="elixir">Elixir</SelectItem>
+                        <SelectItem value="java">Java</SelectItem>
+                        <SelectItem value="ruby">Ruby</SelectItem>
+                        <SelectItem value="python">Python</SelectItem>
+                    </SelectGroup>
+                </SelectContent>
+            </Select>
+        </div>
+    );
+}
+```

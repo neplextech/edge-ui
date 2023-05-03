@@ -13,7 +13,7 @@ import {
 
 export function DialogExample() {
     return (
-        <div className="border p-3 rounded-md flex justify-center align-center">
+        <div className="border p-3 rounded-md flex justify-center items-center">
             <Dialog>
                 <DialogTrigger asChild>
                     <Button variant="outline">Show Dialog</Button>

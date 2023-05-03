@@ -1,15 +1,3 @@
-import { LoaderExample } from '@/components/docs/loader';
-
-# Loader
-
-Displays a loader component.
-
-<LoaderExample />
-<br />
-
-# Example
-
-```jsx
 import { Loader } from '@edge-ui/react';
 
 export function LoaderExample() {
@@ -22,4 +10,3 @@ export function LoaderExample() {
         </div>
     );
 }
-```

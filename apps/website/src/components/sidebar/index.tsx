@@ -22,23 +22,27 @@ export const DocMenuSidebar = [
             { name: 'Button', href: '/button' },
             { name: 'Calendar', href: '/calendar' },
             { name: 'Card', href: '/card' },
+            { name: 'Checkbox', href: '/checkbox' },
             { name: 'Code', href: '/code' },
             { name: 'Context Menu', href: '/context-menu' },
             { name: 'Dialog', href: '/dialog' },
-            { name: 'Form', href: '/form' },
             { name: 'Hover Card', href: '/hover-card' },
+            { name: 'Input', href: '/input' },
             { name: 'Label', href: '/label' },
             { name: 'Layout', href: '/layout' },
             { name: 'Loader', href: '/loader' },
+            { name: 'Menubar', href: '/menubar' },
             { name: 'Navigation', href: '/navigation' },
             { name: 'Progress', href: '/progress' },
             { name: 'Scroll Area', href: '/scroll-area' },
             { name: 'Select', href: '/select' },
             { name: 'Separator', href: '/separator' },
             { name: 'Sheet', href: '/sheet' },
+            { name: 'Skeleton', href: '/skeleton' },
             { name: 'Slider', href: '/slider' },
             { name: 'Switch', href: '/switch' },
             { name: 'Tab', href: '/tab' },
+            { name: 'Textarea', href: '/textarea' },
             { name: 'Toast', href: '/toast' },
             { name: 'Tooltip', href: '/tooltip' },
             { name: 'Typography', href: '/typography' }
@@ -68,7 +72,7 @@ export function Sidebar() {
     return (
         <aside className="hidden md:inline-block md:col-span-1">
             <div className="h-screen overflow-y-auto overflow-x-hidden">
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 mb-4">
                     {DocMenuSidebar.map((menu, idx) => {
                         return (
                             <div key={idx} className="flex flex-col gap-1">
