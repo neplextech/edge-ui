@@ -1,6 +1,6 @@
 {
   "name": "@edge-ui/react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "EdgeUI react components",
   "author": "skdhg",
   "homepage": "https://github.com/skdhg/edge-ui",
@@ -9,7 +9,11 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {
@@ -43,6 +47,7 @@
     "@storybook/testing-library": "0.0.14-next.2",
     "@types/node": "^18.7.5",
     "@types/react": "^18.0.21",
+    "cmdk": "^0.2.0",
     "prop-types": "15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
