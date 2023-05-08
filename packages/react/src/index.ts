@@ -11,6 +11,7 @@ export * from './components/dialog';
 export * from './components/form';
 export * from './hooks';
 export * from './context';
+export * from './components/command';
 export * from './components/hoverCard';
 export * from './components/icons';
 export * from './components/layout';
