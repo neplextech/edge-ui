@@ -6,7 +6,7 @@ export default defineConfig({
     entry: ['./src/index.ts', '!./src/*.css', '!./src/stories', '!./src/*.stories.tsx'],
     skipNodeModulesBundle: true,
     bundle: true,
-    format: ['cjs', 'esm'],
+    format: ['cjs'],
     keepNames: true,
     minify: false,
     outDir: 'dist',

@@ -2,8 +2,8 @@
     "name": "@edge-ui/tsconfig",
     "version": "0.0.0",
     "description": "TSConfig",
-    "author": "skdhg",
-    "homepage": "https://github.com/skdhg/edge-ui",
+    "author": "neplextech",
+    "homepage": "https://github.com/neplextech/edge-ui",
     "license": "MIT",
     "main": "index.js",
     "private": true,
@@ -13,10 +13,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/skdhg/edge-ui.git"
+        "url": "git+https://github.com/neplextech/edge-ui.git"
     },
     "bugs": {
-        "url": "https://github.com/skdhg/edge-ui/issues"
+        "url": "https://github.com/neplextech/edge-ui/issues"
     },
     "devDependencies": {
         "@types/node": "^18.7.5",

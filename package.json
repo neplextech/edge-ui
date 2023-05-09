@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skdhg/edge-ui.git"
+    "url": "git+https://github.com/neplextech/edge-ui.git"
   },
   "keywords": [
     "edge-ui",
@@ -20,12 +20,12 @@
     "library",
     "tailwindcss"
   ],
-  "author": "skdhg",
+  "author": "neplextech",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/skdhg/edge-ui/issues"
+    "url": "https://github.com/neplextech/edge-ui/issues"
   },
-  "homepage": "https://github.com/skdhg/edge-ui#readme",
+  "homepage": "https://github.com/neplextech/edge-ui#readme",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
