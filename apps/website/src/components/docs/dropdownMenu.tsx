@@ -1,16 +1,4 @@
-import { DropdownMenuExample } from '@/components/docs/dropdownMenu';
-
-# Dropdown Menu
-
-This component displays a dropdown menu.
-
-<DropdownMenuExample />
-<br />
-
-# Example
-
-```jsx
-import { Cloud, Github, LogOut, Settings, User } from 'lucide-react';
+import { LogOut, Settings, User } from 'lucide-react';
 import {
     Button,
     DropdownMenu,
@@ -21,7 +9,8 @@ import {
     DropdownMenuSeparator,
     DropdownMenuShortcut,
     DropdownMenuTrigger,
-    DiscordIcon
+    DiscordIcon,
+    GitHubIcon
 } from '@edge-ui/react';
 
 export function DropdownMenuExample() {
@@ -48,19 +37,15 @@ export function DropdownMenuExample() {
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
-                        <Github className="mr-2 h-4 w-4" />
+                        <GitHubIcon className="mr-2 h-4 w-4" />
                         <span>GitHub</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
+                    <DropdownMenuItem disabled>
                         <DiscordIcon className="mr-2 h-4 w-4" />
                         <span>Discord</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem disabled>
-                        <Cloud className="mr-2 h-4 w-4" />
-                        <span>API</span>
-                    </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>
+                    <DropdownMenuItem className="text-destructive">
                         <LogOut className="mr-2 h-4 w-4" />
                         <span>Log out</span>
                         <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
@@ -70,4 +55,3 @@ export function DropdownMenuExample() {
         </div>
     );
 }
-```

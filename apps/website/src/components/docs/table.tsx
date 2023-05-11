@@ -1,15 +1,3 @@
-import { TableExample } from '@/components/docs/table';
-
-# Table
-
-This component displays a table.
-
-<TableExample />
-<br />
-
-# Example
-
-```jsx
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@edge-ui/react';
 
 const GroceryList = [
@@ -77,27 +65,28 @@ const GroceryList = [
 
 export function TableExample() {
     return (
-        <Table>
-            <TableCaption>Grocery List</TableCaption>
-            <TableHeader>
-                <TableRow>
-                    <TableHead className="w-[100px]">ID</TableHead>
-                    <TableHead>Item</TableHead>
-                    <TableHead>Quantity</TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {GroceryList.map((item, idx) => (
-                    <TableRow key={idx}>
-                        <TableCell className="font-medium">{item.ID}</TableCell>
-                        <TableCell>{item.Item}</TableCell>
-                        <TableCell>{item.Quantity}</TableCell>
-                        <TableCell className="text-right">{item.Amount}</TableCell>
+        <div className="border p-3 rounded-md flex flex-col gap-3">
+            <Table>
+                <TableCaption>Grocery List</TableCaption>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[100px]">ID</TableHead>
+                        <TableHead>Item</TableHead>
+                        <TableHead>Quantity</TableHead>
+                        <TableHead className="text-right">Amount</TableHead>
                     </TableRow>
-                ))}
-            </TableBody>
-        </Table>
+                </TableHeader>
+                <TableBody>
+                    {GroceryList.map((item, idx) => (
+                        <TableRow key={idx}>
+                            <TableCell className="font-medium">{item.ID}</TableCell>
+                            <TableCell>{item.Item}</TableCell>
+                            <TableCell>{item.Quantity}</TableCell>
+                            <TableCell className="text-right">{item.Amount}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
     );
 }
-```
