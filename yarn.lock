@@ -1709,10 +1709,12 @@ __metadata:
     "@radix-ui/react-checkbox": ^1.0.3
     "@radix-ui/react-context-menu": ^2.1.3
     "@radix-ui/react-dialog": ^1.0.3
+    "@radix-ui/react-dropdown-menu": ^2.0.4
     "@radix-ui/react-hover-card": ^1.0.5
     "@radix-ui/react-label": ^2.0.1
     "@radix-ui/react-menubar": ^1.0.2
     "@radix-ui/react-navigation-menu": ^1.1.2
+    "@radix-ui/react-popover": ^1.0.5
     "@radix-ui/react-progress": ^1.0.2
     "@radix-ui/react-scroll-area": ^1.0.3
     "@radix-ui/react-select": ^1.2.1
@@ -1729,6 +1731,7 @@ __metadata:
     "@storybook/react": 7.0.7
     "@storybook/react-webpack5": 7.0.7
     "@storybook/testing-library": 0.0.14-next.2
+    "@tanstack/react-table": ^8.9.1
     "@types/node": ^18.7.5
     "@types/react": ^18.0.21
     class-variance-authority: ^0.5.2
@@ -2736,6 +2739,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-dropdown-menu@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@radix-ui/react-dropdown-menu@npm:2.0.4"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/primitive": 1.0.0
+    "@radix-ui/react-compose-refs": 1.0.0
+    "@radix-ui/react-context": 1.0.0
+    "@radix-ui/react-id": 1.0.0
+    "@radix-ui/react-menu": 2.0.4
+    "@radix-ui/react-primitive": 1.0.2
+    "@radix-ui/react-use-controllable-state": 1.0.0
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: e863719c3c6068695a68e9f6f4146e872cfe0a69fc6c4c9493680897f67c97fa20428fea87e5f27149ac4a01f8593cae786fa9add8f44b94205a8981c3e3d0f6
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-focus-guards@npm:1.0.0":
   version: 1.0.0
   resolution: "@radix-ui/react-focus-guards@npm:1.0.0"
@@ -2898,6 +2920,33 @@ __metadata:
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
   checksum: 2c321a10acf532cfead8f63c1eca9acb742fb94de3d67c8c8e2614845086376995e78cb3d31ac1bc4a915e961e5c19d60b52106c1c9196c9789d4da3e831fd5b
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-popover@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@radix-ui/react-popover@npm:1.0.5"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/primitive": 1.0.0
+    "@radix-ui/react-compose-refs": 1.0.0
+    "@radix-ui/react-context": 1.0.0
+    "@radix-ui/react-dismissable-layer": 1.0.3
+    "@radix-ui/react-focus-guards": 1.0.0
+    "@radix-ui/react-focus-scope": 1.0.2
+    "@radix-ui/react-id": 1.0.0
+    "@radix-ui/react-popper": 1.1.1
+    "@radix-ui/react-portal": 1.0.2
+    "@radix-ui/react-presence": 1.0.0
+    "@radix-ui/react-primitive": 1.0.2
+    "@radix-ui/react-slot": 1.0.1
+    "@radix-ui/react-use-controllable-state": 1.0.0
+    aria-hidden: ^1.1.1
+    react-remove-scroll: 2.5.5
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: 5a748af34b9889350c0f4dc0a15b1d09c3ab8a8bacc6e7a358c70341de94acbbdb07aafbeadfbe0371cf77dabdaf4e273bbcf742f5d67f29543eb8cea58ee2a9
   languageName: node
   linkType: hard
 
@@ -4436,6 +4485,25 @@ __metadata:
   dependencies:
     defer-to-connect: ^1.0.1
   checksum: 4d9158061c5f397c57b4988cde33a163244e4f02df16364f103971957a32886beb104d6180902cbe8b38cb940e234d9f98a4e486200deca621923f62f50a06fe
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-table@npm:^8.9.1":
+  version: 8.9.1
+  resolution: "@tanstack/react-table@npm:8.9.1"
+  dependencies:
+    "@tanstack/table-core": 8.9.1
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: 16d044c382598aad3c984d8e175183c5fd48093249dfb51ee592d2f1bb16e253aa437e0834bf9d27d69043493feeb22a5185b3226c704b99e13c45950cb82141
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.9.1":
+  version: 8.9.1
+  resolution: "@tanstack/table-core@npm:8.9.1"
+  checksum: b9a514cfeb78b2ebece5116188ab929d0b0b72b6abfe6144c2b1dd68e32faafba5295b2b5dfefa9d3a0cf78dd0f20e7c313ff2dbdf013ee98232e856a549654f
   languageName: node
   linkType: hard
 
