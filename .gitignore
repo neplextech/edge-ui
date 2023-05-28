@@ -106,6 +106,7 @@ dist
 # Yarn
 .yarn/cache/
 .yarn/install-state.gz
+.yarn/versions
 
 # Turbo
 .turbo/
