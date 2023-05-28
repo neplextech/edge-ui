@@ -57,8 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <EdgeUIProvider fontSans={manrope.style.fontFamily}>
             <Toaster />
             <Navbar />
-
-            <Layout className="justify-around items-center my-7">
+            <main className="w-[90%] sm:w-[85%] mx-auto space-y-16 justify-around items-center my-7">
                 {['/docs', '/components'].some((p) => pathname.startsWith(p)) ? (
                     <>
                         <div className="md:grid md:grid-cols-5">
@@ -73,7 +72,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 ) : (
                     <Component {...pageProps} />
                 )}
-            </Layout>
+            </main>
         </EdgeUIProvider>
     );
 }
