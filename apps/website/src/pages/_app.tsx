@@ -5,7 +5,6 @@ import { Manrope } from 'next/font/google';
 import {
     EdgeUIProvider,
     Heading,
-    Layout,
     Paragraph,
     Toaster,
     Blockquote,
