@@ -1,6 +1,5 @@
 import {
     Heading,
-    Layout,
     Card,
     CardHeader,
     CardTitle,
@@ -10,11 +9,17 @@ import {
     Flex
 } from '@edge-ui/react';
 import Link from 'next/link';
+import Head from 'next/head';
 import { ComponentIcon, PenToolIcon } from 'lucide-react';
 
 export default function Home() {
     return (
         <>
+            <Head>
+                <title>EdgeUI - A Minimal UI Components Library</title>
+                <meta name="description" content="A Minimal UI components library for building modern websites and applications using React." />
+            </Head>
+
             <div className="text-center space-y-8 max-w-[850px] mx-auto">
                 <Heading.H1 className="text-6xl md:text-7xl">EdgeUI</Heading.H1>
                 <Heading.H3 className="text-muted-foreground">
