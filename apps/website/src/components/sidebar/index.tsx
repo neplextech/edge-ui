@@ -28,6 +28,7 @@ export const DocMenuSidebar = [
             { name: 'Context Menu', href: '/context-menu' },
             { name: 'Dialog', href: '/dialog' },
             { name: 'Dropdown Menu', href: '/dropdown-menu' },
+            { name: 'Form', href: '/form-control' },
             { name: 'Hover Card', href: '/hover-card' },
             { name: 'Input', href: '/input' },
             { name: 'Label', href: '/label' },
