@@ -59,7 +59,7 @@ export default function Navbar() {
                             <span className="sr-only">GitHub</span>
                             <GitHubIcon className="h-5 w-5 cursor-pointer" />
                         </Link>
-                        <Link href="/">
+                        <Link href="https://discord.gg/EeW2M44sRs">
                             <span className="sr-only">Discord</span>
                             <DiscordIcon className="h-5 w-5 cursor-pointer" />
                         </Link>
@@ -136,7 +136,7 @@ function MobileNav({ isOpen, isDark, toggleDark, onClose }: MobileNavProps) {
                         <span className="sr-only">GitHub</span>
                         <GitHubIcon className="h-7 w-6 cursor-pointer" />
                     </Link>
-                    <Link href="/">
+                    <Link href="https://discord.gg/EeW2M44sRs">
                         <span className="sr-only">Discord</span>
                         <DiscordIcon className="h-6 w-6 cursor-pointer" />
                     </Link>
