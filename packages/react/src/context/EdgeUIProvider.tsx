@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { CssBaseline, noop } from '../utility';
 import { isBrowser } from '../utility/isBrowser';
