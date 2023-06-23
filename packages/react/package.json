@@ -1,6 +1,6 @@
 {
   "name": "@edge-ui/react",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Minimal UI components library for react",
   "author": "neplextech",
   "homepage": "https://ui.neplextech.com",
@@ -17,7 +17,7 @@
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {
-    "build": "tsup --external react && node ./scripts/esm.js && tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "build": "rimraf dist && tsc && node ./scripts/esm.js && tailwindcss -i ./src/styles.css -o ./dist/styles.css",
     "tscheck": "tsc --noEmit",
     "prepublish": "yarn build",
     "storybook": "storybook dev -p 6006",
@@ -50,9 +50,9 @@
     "prop-types": "15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.1",
     "storybook": "7.0.7",
     "tailwindcss": "^3.1.8",
-    "tsup": "^6.2.3",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
@@ -93,6 +93,7 @@
     "react-hook-form": "^7.45.0",
     "tailwind-merge": "^1.12.0",
     "tailwindcss-animate": "^1.0.5",
+    "tslib": "^2.5.3",
     "zod": "^3.21.4"
   }
 }

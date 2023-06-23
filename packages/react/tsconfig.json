@@ -5,17 +5,17 @@
         "esModuleInterop": true, 
         "forceConsistentCasingInFileNames": true,
         "strict": true, 
+        "alwaysStrict": false,
         "skipLibCheck": true,
         "jsx": "react", 
-        "module": "ESNext",  
+        "module": "CommonJS",
         "declaration": true,
-        "declarationDir": "types",
         "sourceMap": true,
         "outDir": "dist",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
-        "emitDeclarationOnly": true,
-        "isolatedModules": true
+        "isolatedModules": true,
+        "importHelpers": true
     },
     "include": ["src/**/*", "postcss.config.js"],
     "exclude": ["node_modules"]
