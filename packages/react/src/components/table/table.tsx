@@ -1,13 +1,29 @@
 import * as React from 'react';
 import { cn } from '../../utility';
+import { VariantProps, cva } from 'class-variance-authority';
 
-const Table = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTableElement>>(
-    ({ className, ...props }, ref) => (
-        <div className="w-full overflow-auto">
-            <table ref={ref} className={cn('w-full caption-bottom text-sm', className)} {...props} />
-        </div>
-    )
-);
+const captionSideVariants = cva('', {
+    variants: {
+        captionSide: {
+            default: 'caption-bottom',
+            top: 'caption-top',
+            bottom: 'caption-bottom'
+        }
+    },
+    defaultVariants: {
+        captionSide: 'default'
+    }
+});
+
+export interface TableProps
+    extends React.TableHTMLAttributes<HTMLTableElement>,
+        VariantProps<typeof captionSideVariants> {}
+
+const Table = React.forwardRef<HTMLTableElement, TableProps>(({ className, captionSide, ...props }, ref) => (
+    <div className="w-full overflow-auto">
+        <table ref={ref} className={cn('w-full text-sm', captionSideVariants({ captionSide }), className)} {...props} />
+    </div>
+));
 Table.displayName = 'Table';
 
 const TableHeader = React.forwardRef<HTMLTableSectionElement, React.HTMLAttributes<HTMLTableSectionElement>>(
