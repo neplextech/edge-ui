@@ -54,7 +54,7 @@ import '@edge-ui/react/styles.css';
 import 'globals.css';
 import { EdgeUIProvider } from '@edge-ui/react';
 
-export function Main({ Component, pageProps }) {
+export default function Main({ Component, pageProps }) {
     return (
         <EdgeUIProvider>
             <Component {...pageProps}>
@@ -80,7 +80,7 @@ const manrope = Manrope({
     display: 'swap'
 });
 
-export function Main({ Component, pageProps }) {
+export default function Main({ Component, pageProps }) {
     return (
         <EdgeUIProvider fontSans={manrope.style.fontFamily}>
             <Component {...pageProps}>
