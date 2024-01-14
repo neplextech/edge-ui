@@ -20,11 +20,12 @@
   },
   "scripts": {
     "tscheck": "tsc --noEmit",
-    "prepublish": "yarn build",
     "ui": "shadcn-ui"
   },
   "files": [
-    "dist"
+    "src",
+    "tailwind-plugin.ts",
+    "components.json"
   ],
   "repository": {
     "type": "git",
